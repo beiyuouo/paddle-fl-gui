@@ -1,0 +1,11 @@
+numpy
+requests
+scikit-image
+scikit-learn
+tqdm
+pillow
+opencv-python
+matplotlib
+IPython
+paddlepaddle-gpu
+paddlepaddle
