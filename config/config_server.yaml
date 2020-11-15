@@ -1,0 +1,12 @@
+parameter:
+  lr: 2e-5
+  round: 10
+  num_users: 3
+  frac: 0.7
+
+path:
+  models_save_path: 'models/'
+
+server:
+  ip: '127.0.0.1'
+  port: ''

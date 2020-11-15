@@ -1,0 +1,8 @@
+parameter:
+  lr: 1e-2
+  epochs: 5
+  bs: 1
+
+server:
+  ip: '127.0.0.1'
+  port: ''

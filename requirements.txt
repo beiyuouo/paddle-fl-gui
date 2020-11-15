@@ -1,0 +1,16 @@
+torch~=1.7.0+cpu
+numpy~=1.19.1
+torchvision~=0.8.1+cpu
+setuptools~=49.6.0
+requests~=2.24.0
+tqdm~=4.48.2
+ipython~=7.16.1
+pillow~=7.2.0
+sklearn~=0.0
+scikit-learn~=0.23.2
+scikit-image~=0.17.2
+six~=1.15.0
+matplotlib~=3.3.1
+pyqt5~=5.15.1
+interpretdl~=0.1.6
+pyyaml~=5.3.1
