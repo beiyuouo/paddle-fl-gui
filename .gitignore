@@ -6,13 +6,6 @@
 venv/
 virtualenv/
 __pycache__
-.pytest_cache/
-.mypy_cache/
-build/
-dist/
-*.egg-info/
-docs/_build/
-tutorials/assets/ResNet101_pretrained
 
 # misc
 .DS_Store
@@ -28,4 +21,4 @@ tutorials/assets/ResNet101_pretrained
 .ipynb_checkpoints
 
 # path
-utils/models/
+utils/models/*
