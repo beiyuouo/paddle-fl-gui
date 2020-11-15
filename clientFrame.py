@@ -23,12 +23,17 @@ class ClientFrame(QWidget):
         self.paramTab.resize(300, 300)
         self.paramTab.move(50, 50)
         self.paramTab.setColumnCount(2)
+        self.paramTab.setColumnWidth(0, 100)
+        self.paramTab.setColumnWidth(1, 180)
         self.paramTab.setHorizontalHeaderLabels(['param', 'value'])
         paramList = []
         for it in self.config['parameter']:
             # print(it)
             paramList.append([it, str(self.config['parameter'][it])])
         paramList.append(['ip:port', '{}:{}'.format(self.config['server']['ip'], self.config['server']['port'])])
+        paramList.append(
+            ['scheduler_ip:port', '{}:{}'.format(self.config['server']['ip'], self.config['scheduler']['port'])])
+
         self.paramTab.setRowCount(len(paramList))
         for i, (it0, it1) in enumerate(paramList):
             self.paramTab.setItem(i, 0, QTableWidgetItem(it0))
