@@ -6,10 +6,12 @@ parameter:
 
 path:
   models_save_path: 'models/'
+  job_path: 'fl_job_config'
 
 server:
   ip: '127.0.0.1'
   port: '8181'
 
 scheduler:
+  ip: '127.0.0.1'
   port: '9091'

@@ -6,7 +6,7 @@ from utils.testFrame import *
 
 
 class ServerFrame(QWidget):
-    def __init__(self):
+    def __init__(self, id=0):
         super(ServerFrame, self).__init__()
         self.id = id
         self.config_file = 'config/config_server.yaml'
@@ -33,7 +33,7 @@ class ServerFrame(QWidget):
             paramList.append([it, str(self.config['parameter'][it])])
         paramList.append(['ip:port', '{}:{}'.format(self.config['server']['ip'], self.config['server']['port'])])
         paramList.append(
-            ['scheduler_ip:port', '{}:{}'.format(self.config['server']['ip'], self.config['scheduler']['port'])])
+            ['scheduler_ip:port', '{}:{}'.format(self.config['scheduler']['ip'], self.config['scheduler']['port'])])
 
         self.paramTab.setRowCount(len(paramList))
         for i, (it0, it1) in enumerate(paramList):
@@ -60,7 +60,7 @@ class ServerFrame(QWidget):
         self.stopBtn = QPushButton('stop', self)
         self.stopBtn.move(600, 400)
 
-        self.setWindowTitle('Server'.format(self.id))
+        self.setWindowTitle('Server {}'.format(self.id))
         self.show()
 
 

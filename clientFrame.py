@@ -32,7 +32,7 @@ class ClientFrame(QWidget):
             paramList.append([it, str(self.config['parameter'][it])])
         paramList.append(['ip:port', '{}:{}'.format(self.config['server']['ip'], self.config['server']['port'])])
         paramList.append(
-            ['scheduler_ip:port', '{}:{}'.format(self.config['server']['ip'], self.config['scheduler']['port'])])
+            ['scheduler_ip:port', '{}:{}'.format(self.config['scheduler']['ip'], self.config['scheduler']['port'])])
 
         self.paramTab.setRowCount(len(paramList))
         for i, (it0, it1) in enumerate(paramList):

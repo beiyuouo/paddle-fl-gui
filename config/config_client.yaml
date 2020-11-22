@@ -8,4 +8,5 @@ server:
   port: '8181'
 
 scheduler:
+  ip: '127.0.0.1'
   port: '9091'
