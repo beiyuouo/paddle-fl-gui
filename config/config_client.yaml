@@ -3,6 +3,10 @@ parameter:
   epochs: 5
   bs: 1
 
+path:
+  output_path: 'fl_model'
+  job_path: 'fl_job_config'
+
 server:
   ip: '127.0.0.1'
   port: '8181'
@@ -10,3 +14,7 @@ server:
 scheduler:
   ip: '127.0.0.1'
   port: '9091'
+
+client:
+  ip: '127.0.0.1'
+  port: '8182'

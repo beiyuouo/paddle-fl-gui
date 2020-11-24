@@ -4,6 +4,8 @@ from PyQt5 import QtGui
 import yaml
 from utils.testFrame import *
 
+from serverControlFrame import *
+
 
 class ServerFrame(QWidget):
     def __init__(self, id=0):
@@ -50,18 +52,19 @@ class ServerFrame(QWidget):
 
         self.paramTab.setHorizontalHeaderLabels(['client_id', 'ip:port'])
 
-        self.processLabel = QLabel('noconnect', self)
-        self.processLabel.resize(100, 20)
-        self.processLabel.move(600, 470)
-
         self.startBtn = QPushButton('start', self)
-        self.startBtn.move(450, 400)
+        self.startBtn.move(550, 400)
+        self.startBtn.clicked.connect(self.open_scf)
 
-        self.stopBtn = QPushButton('stop', self)
-        self.stopBtn.move(600, 400)
+        # self.stopBtn = QPushButton('stop', self)
+        # self.stopBtn.move(600, 400)
 
         self.setWindowTitle('Server {}'.format(self.id))
         self.show()
+
+    def open_scf(self):
+        self.scf = ServerControlFrame(self.config, self.id)
+        self.scf.show()
 
 
 if __name__ == '__main__':

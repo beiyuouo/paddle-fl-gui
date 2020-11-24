@@ -1,4 +1,5 @@
 import sys
+
 from PyQt5.QtWidgets import *
 from PyQt5 import QtGui
 import yaml
@@ -43,6 +44,7 @@ class ClientFrame(QWidget):
         self.connectBtn = QPushButton('connect', self)
         # self.connectBtn.resize()
         self.connectBtn.move(150, 400)
+        self.connectBtn.clicked.connect(self.connect_server)
 
         self.lossLabel = QLabel('loss', self)
         self.lossLabel.resize(300, 300)
@@ -50,19 +52,45 @@ class ClientFrame(QWidget):
 
         self.processLabel = QLabel('noconnect', self)
         self.processLabel.resize(100, 20)
+        # self.processLabel.setAlignment(AlignRight)
         self.processLabel.move(600, 470)
 
         self.testBtn = QPushButton('test', self)
         self.testBtn.move(550, 400)
-        self.testBtn.clicked.connect(self.opentestwin)
+        self.testBtn.clicked.connect(self.open_test_frame)
 
         self.setWindowTitle('Client {}'.format(self.id))
         self.show()
 
-    def opentestwin(self):
+    def open_test_frame(self):
         self.testframe = TestFrame()
         self.testframe.show()
 
+    def connect_server(self):
+        from paddle import fluid
+        from paddle_fl.paddle_fl.core.trainer.fl_trainer import FLTrainerFactory
+        from paddle_fl.paddle_fl.core.master.fl_job import FLRunTimeJob
+        import numpy as np
+        import sys
+
+        import logging
+        self.processLabel.setText('connecting')
+        trainer_id = self.id
+        job_path = self.config['path']['job_path']
+        job = FLRunTimeJob()
+        job.load_trainer_job(job_path, trainer_id)
+        job._scheduler_ep = '{}:{}'.format(self.config['scheduler']['ip'], self.config['scheduler']['port'])
+        # print(job._trainer_send_program)
+
+        trainer = FLTrainerFactory().create_fl_trainer(job)
+        use_cuda = False
+        place = fluid.CUDAPlace(0) if use_cuda else fluid.CPUPlace()
+        trainer._current_ep = '{}:{}'.format(self.config['client']['ip'], int(self.config['client']['port']) + self.id)
+        print('prepared ok')
+        trainer.start(place=place)
+        trainer._logger.setLevel(logging.DEBUG)
+        print('connected ok')
+        self.processLabel.setText('connected')
 
 
 if __name__ == '__main__':
