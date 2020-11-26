@@ -26,3 +26,4 @@ __pycache__
 utils/models/*
 fl_job_config/*
 data/*
+fl_model/*

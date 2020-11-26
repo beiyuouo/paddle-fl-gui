@@ -113,7 +113,7 @@ class ClientFrame(QWidget):
             if self.id == 0:
                 print("start saving model")
                 self.trainer.save_inference_program(output_folder)
-            if step_i >git int(self.config['parameter']['round']):
+            if step_i > int(self.config['parameter']['round']):
                 break
 
 
