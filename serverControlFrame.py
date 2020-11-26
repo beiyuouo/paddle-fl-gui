@@ -33,7 +33,7 @@ class ServerControlFrame(QWidget):
             self.cgvBox.addWidget(cliStateLabel)
             self.clientGroupList.append([cliLabel, cliProBar, cliProLabel, cliStateLabel])
 
-        self.serGroupList = []
+        # self.serGroupList = []
         serLabel = QLabel('server')
         serProBar = QProgressBar()
         serProLabel = QLabel('{} %'.format(0))
@@ -190,6 +190,7 @@ class ServerControlFrame(QWidget):
             if self.connected_agent != len(self.scheduler.fl_workers):
                 print(self.scheduler.fl_workers, cli_set)
                 new_cli = set(self.scheduler.fl_workers) - cli_set
+                self.clientGroupList[self.connected_agent][3].setText('connected')
                 print(new_cli)
                 new_cli = list(new_cli)
                 print('get client {} connection'.format(new_cli))
@@ -199,7 +200,6 @@ class ServerControlFrame(QWidget):
         self.startBtn.setDisabled(False)
 
     def start_train(self):
-
         self.scheduler.start_fl_training()
 
     def stop_train(self):

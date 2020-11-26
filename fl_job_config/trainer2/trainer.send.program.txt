@@ -1,0 +1,1318 @@
+blocks {
+  idx: 0
+  parent_idx: -1
+  vars {
+    name: "fc_1.tmp_0@GRAD"
+    type {
+      type: LOD_TENSOR
+      lod_tensor {
+        tensor {
+          data_type: FP32
+          dims: -1
+          dims: 128
+        }
+        lod_level: 0
+      }
+    }
+  }
+  vars {
+    name: "fc_1.tmp_1@GRAD"
+    type {
+      type: LOD_TENSOR
+      lod_tensor {
+        tensor {
+          data_type: FP32
+          dims: -1
+          dims: 128
+        }
+        lod_level: 0
+      }
+    }
+  }
+  vars {
+    name: "fc_2.w_0@GRAD"
+    type {
+      type: LOD_TENSOR
+      lod_tensor {
+        tensor {
+          data_type: FP32
+          dims: 128
+          dims: 2
+        }
+      }
+    }
+  }
+  vars {
+    name: "fc_1.tmp_2@GRAD"
+    type {
+      type: LOD_TENSOR
+      lod_tensor {
+        tensor {
+          data_type: FP32
+          dims: -1
+          dims: 128
+        }
+      }
+    }
+  }
+  vars {
+    name: "fc_2.b_0@GRAD"
+    type {
+      type: LOD_TENSOR
+      lod_tensor {
+        tensor {
+          data_type: FP32
+          dims: 2
+        }
+        lod_level: 0
+      }
+    }
+  }
+  vars {
+    name: "concat_0.tmp_0@GRAD"
+    type {
+      type: LOD_TENSOR
+      lod_tensor {
+        tensor {
+          data_type: FP32
+          dims: -1
+          dims: 15
+        }
+      }
+    }
+  }
+  vars {
+    name: "fc_2.tmp_2@GRAD"
+    type {
+      type: LOD_TENSOR
+      lod_tensor {
+        tensor {
+          data_type: FP32
+          dims: -1
+          dims: 2
+        }
+        lod_level: 0
+      }
+    }
+  }
+  vars {
+    name: "fc_2.tmp_0"
+    type {
+      type: LOD_TENSOR
+      lod_tensor {
+        tensor {
+          data_type: FP32
+          dims: -1
+          dims: 2
+        }
+        lod_level: 0
+      }
+    }
+    persistable: false
+  }
+  vars {
+    name: "accuracy_0.tmp_2"
+    type {
+      type: LOD_TENSOR
+      lod_tensor {
+        tensor {
+          data_type: INT32
+          dims: 1
+        }
+      }
+    }
+    persistable: false
+  }
+  vars {
+    name: "fc_1.tmp_0"
+    type {
+      type: LOD_TENSOR
+      lod_tensor {
+        tensor {
+          data_type: FP32
+          dims: -1
+          dims: 128
+        }
+        lod_level: 0
+      }
+    }
+    persistable: false
+  }
+  vars {
+    name: "reduce_mean_0.tmp_0"
+    type {
+      type: LOD_TENSOR
+      lod_tensor {
+        tensor {
+          data_type: FP32
+          dims: 1
+        }
+      }
+    }
+    persistable: false
+  }
+  vars {
+    name: "2"
+    type {
+      type: LOD_TENSOR
+      lod_tensor {
+        tensor {
+          data_type: FP32
+          dims: -1
+          dims: 5
+        }
+        lod_level: 0
+      }
+    }
+    persistable: false
+  }
+  vars {
+    name: "fc_1.b_0.opti.trainer_2"
+    type {
+      type: LOD_TENSOR
+      lod_tensor {
+        tensor {
+          data_type: FP32
+          dims: 128
+        }
+        lod_level: 0
+      }
+    }
+    persistable: true
+  }
+  vars {
+    name: "accuracy_0.tmp_1"
+    type {
+      type: LOD_TENSOR
+      lod_tensor {
+        tensor {
+          data_type: INT32
+          dims: 1
+        }
+      }
+    }
+    persistable: false
+  }
+  vars {
+    name: "cross_entropy2_0.tmp_1"
+    type {
+      type: LOD_TENSOR
+      lod_tensor {
+        tensor {
+          data_type: FP32
+          dims: -1
+          dims: 2
+          dims: 0
+        }
+        lod_level: 0
+      }
+    }
+    persistable: false
+  }
+  vars {
+    name: "fc_0.b_0"
+    type {
+      type: LOD_TENSOR
+      lod_tensor {
+        tensor {
+          data_type: FP32
+          dims: 256
+        }
+      }
+    }
+    persistable: true
+  }
+  vars {
+    name: "fc_1.b_0"
+    type {
+      type: LOD_TENSOR
+      lod_tensor {
+        tensor {
+          data_type: FP32
+          dims: 128
+        }
+      }
+    }
+    persistable: true
+  }
+  vars {
+    name: "fc_1.w_0.opti.trainer_2"
+    type {
+      type: LOD_TENSOR
+      lod_tensor {
+        tensor {
+          data_type: FP32
+          dims: 256
+          dims: 128
+        }
+        lod_level: 0
+      }
+    }
+    persistable: true
+  }
+  vars {
+    name: "fc_2.tmp_1@GRAD"
+    type {
+      type: LOD_TENSOR
+      lod_tensor {
+        tensor {
+          data_type: FP32
+          dims: -1
+          dims: 2
+        }
+      }
+    }
+  }
+  vars {
+    name: "concat_0.tmp_0"
+    type {
+      type: LOD_TENSOR
+      lod_tensor {
+        tensor {
+          data_type: FP32
+          dims: -1
+          dims: 15
+        }
+        lod_level: 0
+      }
+    }
+    persistable: false
+  }
+  vars {
+    name: "__control_var@0.20949173579868052"
+    type {
+      type: LOD_TENSOR
+    }
+  }
+  vars {
+    name: "fc_1.w_0@GRAD"
+    type {
+      type: LOD_TENSOR
+      lod_tensor {
+        tensor {
+          data_type: FP32
+          dims: 256
+          dims: 128
+        }
+      }
+    }
+  }
+  vars {
+    name: "fc_0.w_0"
+    type {
+      type: LOD_TENSOR
+      lod_tensor {
+        tensor {
+          data_type: FP32
+          dims: 15
+          dims: 256
+        }
+      }
+    }
+    persistable: true
+  }
+  vars {
+    name: "fc_2.tmp_2"
+    type {
+      type: LOD_TENSOR
+      lod_tensor {
+        tensor {
+          data_type: FP32
+          dims: -1
+          dims: 2
+        }
+        lod_level: 0
+      }
+    }
+    persistable: false
+  }
+  vars {
+    name: "__control_var@0.3162078654349"
+    type {
+      type: LOD_TENSOR
+    }
+  }
+  vars {
+    name: "fc_0.tmp_0"
+    type {
+      type: LOD_TENSOR
+      lod_tensor {
+        tensor {
+          data_type: FP32
+          dims: -1
+          dims: 256
+        }
+        lod_level: 0
+      }
+    }
+    persistable: false
+  }
+  vars {
+    name: "__control_var@0.8270440989426737"
+    type {
+      type: LOD_TENSOR
+    }
+  }
+  vars {
+    name: "cross_entropy2_0.tmp_0"
+    type {
+      type: LOD_TENSOR
+      lod_tensor {
+        tensor {
+          data_type: FP32
+          dims: -1
+          dims: 1
+        }
+        lod_level: 0
+      }
+    }
+    persistable: false
+  }
+  vars {
+    name: "fc_0.w_0.opti.trainer_2"
+    type {
+      type: LOD_TENSOR
+      lod_tensor {
+        tensor {
+          data_type: FP32
+          dims: 15
+          dims: 256
+        }
+        lod_level: 0
+      }
+    }
+    persistable: true
+  }
+  vars {
+    name: "fc_2.w_0.opti.trainer_2"
+    type {
+      type: LOD_TENSOR
+      lod_tensor {
+        tensor {
+          data_type: FP32
+          dims: 128
+          dims: 2
+        }
+        lod_level: 0
+      }
+    }
+    persistable: true
+  }
+  vars {
+    name: "fc_0.b_0.opti.trainer_2"
+    type {
+      type: LOD_TENSOR
+      lod_tensor {
+        tensor {
+          data_type: FP32
+          dims: 256
+        }
+        lod_level: 0
+      }
+    }
+    persistable: true
+  }
+  vars {
+    name: "fc_2.b_0.opti.trainer_2"
+    type {
+      type: LOD_TENSOR
+      lod_tensor {
+        tensor {
+          data_type: FP32
+          dims: 2
+        }
+        lod_level: 0
+      }
+    }
+    persistable: true
+  }
+  vars {
+    name: "fc_0.w_0@GRAD"
+    type {
+      type: LOD_TENSOR
+      lod_tensor {
+        tensor {
+          data_type: FP32
+          dims: 15
+          dims: 256
+        }
+      }
+    }
+  }
+  vars {
+    name: "fc_0.tmp_2"
+    type {
+      type: LOD_TENSOR
+      lod_tensor {
+        tensor {
+          data_type: FP32
+          dims: -1
+          dims: 256
+        }
+        lod_level: 0
+      }
+    }
+    persistable: false
+  }
+  vars {
+    name: "cross_entropy2_0.tmp_0@GRAD"
+    type {
+      type: LOD_TENSOR
+      lod_tensor {
+        tensor {
+          data_type: FP32
+          dims: -1
+          dims: 1
+        }
+        lod_level: 0
+      }
+    }
+  }
+  vars {
+    name: "fc_0.tmp_1"
+    type {
+      type: LOD_TENSOR
+      lod_tensor {
+        tensor {
+          data_type: FP32
+          dims: -1
+          dims: 256
+        }
+        lod_level: 0
+      }
+    }
+    persistable: false
+  }
+  vars {
+    name: "top_k_0.tmp_1"
+    type {
+      type: LOD_TENSOR
+      lod_tensor {
+        tensor {
+          data_type: INT64
+          dims: -1
+          dims: 1
+        }
+        lod_level: 0
+      }
+    }
+    persistable: false
+  }
+  vars {
+    name: "fc_2.w_0"
+    type {
+      type: LOD_TENSOR
+      lod_tensor {
+        tensor {
+          data_type: FP32
+          dims: 128
+          dims: 2
+        }
+      }
+    }
+    persistable: true
+  }
+  vars {
+    name: "label"
+    type {
+      type: LOD_TENSOR
+      lod_tensor {
+        tensor {
+          data_type: INT64
+          dims: -1
+          dims: 1
+        }
+        lod_level: 0
+      }
+    }
+    persistable: false
+  }
+  vars {
+    name: "__control_var@0.45607337136732884"
+    type {
+      type: LOD_TENSOR
+    }
+  }
+  vars {
+    name: "fc_0.tmp_1@GRAD"
+    type {
+      type: LOD_TENSOR
+      lod_tensor {
+        tensor {
+          data_type: FP32
+          dims: -1
+          dims: 256
+        }
+        lod_level: 0
+      }
+    }
+  }
+  vars {
+    name: "fc_1.tmp_2"
+    type {
+      type: LOD_TENSOR
+      lod_tensor {
+        tensor {
+          data_type: FP32
+          dims: -1
+          dims: 128
+        }
+        lod_level: 0
+      }
+    }
+    persistable: false
+  }
+  vars {
+    name: "__control_var@0.25373165800180875"
+    type {
+      type: LOD_TENSOR
+    }
+  }
+  vars {
+    name: "fc_0.b_0@GRAD"
+    type {
+      type: LOD_TENSOR
+      lod_tensor {
+        tensor {
+          data_type: FP32
+          dims: 256
+        }
+        lod_level: 0
+      }
+    }
+  }
+  vars {
+    name: "learning_rate_0"
+    type {
+      type: LOD_TENSOR
+      lod_tensor {
+        tensor {
+          data_type: FP32
+          dims: 1
+        }
+      }
+    }
+    persistable: true
+  }
+  vars {
+    name: "fc_1.b_0@GRAD"
+    type {
+      type: LOD_TENSOR
+      lod_tensor {
+        tensor {
+          data_type: FP32
+          dims: 128
+        }
+        lod_level: 0
+      }
+    }
+  }
+  vars {
+    name: "__control_var@0.03748485893049647"
+    type {
+      type: LOD_TENSOR
+    }
+  }
+  vars {
+    name: "fc_0.tmp_0@GRAD"
+    type {
+      type: LOD_TENSOR
+      lod_tensor {
+        tensor {
+          data_type: FP32
+          dims: -1
+          dims: 256
+        }
+        lod_level: 0
+      }
+    }
+  }
+  vars {
+    name: "top_k_0.tmp_0"
+    type {
+      type: LOD_TENSOR
+      lod_tensor {
+        tensor {
+          data_type: FP32
+          dims: -1
+          dims: 1
+        }
+        lod_level: 0
+      }
+    }
+    persistable: false
+  }
+  vars {
+    name: "fc_2.tmp_1"
+    type {
+      type: LOD_TENSOR
+      lod_tensor {
+        tensor {
+          data_type: FP32
+          dims: -1
+          dims: 2
+        }
+        lod_level: 0
+      }
+    }
+    persistable: false
+  }
+  vars {
+    name: "fc_2.b_0"
+    type {
+      type: LOD_TENSOR
+      lod_tensor {
+        tensor {
+          data_type: FP32
+          dims: 2
+        }
+      }
+    }
+    persistable: true
+  }
+  vars {
+    name: "1"
+    type {
+      type: LOD_TENSOR
+      lod_tensor {
+        tensor {
+          data_type: FP32
+          dims: -1
+          dims: 5
+        }
+        lod_level: 0
+      }
+    }
+    persistable: false
+  }
+  vars {
+    name: "fc_1.tmp_1"
+    type {
+      type: LOD_TENSOR
+      lod_tensor {
+        tensor {
+          data_type: FP32
+          dims: -1
+          dims: 128
+        }
+        lod_level: 0
+      }
+    }
+    persistable: false
+  }
+  vars {
+    name: "fc_1.w_0"
+    type {
+      type: LOD_TENSOR
+      lod_tensor {
+        tensor {
+          data_type: FP32
+          dims: 256
+          dims: 128
+        }
+      }
+    }
+    persistable: true
+  }
+  vars {
+    name: "reduce_mean_0.tmp_0@GRAD"
+    type {
+      type: LOD_TENSOR
+      lod_tensor {
+        tensor {
+          data_type: FP32
+          dims: 1
+        }
+      }
+    }
+  }
+  vars {
+    name: "fc_2.tmp_0@GRAD"
+    type {
+      type: LOD_TENSOR
+      lod_tensor {
+        tensor {
+          data_type: FP32
+          dims: -1
+          dims: 2
+        }
+        lod_level: 0
+      }
+    }
+  }
+  vars {
+    name: "cross_entropy2_0.tmp_2"
+    type {
+      type: LOD_TENSOR
+      lod_tensor {
+        tensor {
+          data_type: FP32
+          dims: -1
+          dims: 1
+        }
+      }
+    }
+    persistable: false
+  }
+  vars {
+    name: "__control_var@0.9282663194701407"
+    type {
+      type: LOD_TENSOR
+    }
+  }
+  vars {
+    name: "accuracy_0.tmp_0"
+    type {
+      type: LOD_TENSOR
+      lod_tensor {
+        tensor {
+          data_type: FP32
+          dims: 1
+        }
+        lod_level: 0
+      }
+    }
+    persistable: false
+  }
+  vars {
+    name: "0"
+    type {
+      type: LOD_TENSOR
+      lod_tensor {
+        tensor {
+          data_type: FP32
+          dims: -1
+          dims: 5
+        }
+        lod_level: 0
+      }
+    }
+    persistable: false
+  }
+  vars {
+    name: "fc_0.tmp_2@GRAD"
+    type {
+      type: LOD_TENSOR
+      lod_tensor {
+        tensor {
+          data_type: FP32
+          dims: -1
+          dims: 256
+        }
+      }
+    }
+  }
+  ops {
+    inputs {
+      parameter: "X"
+      arguments: "fc_0.b_0.opti.trainer_2"
+    }
+    outputs {
+      parameter: "Out"
+      arguments: "__control_var@0.8270440989426737"
+    }
+    type: "send"
+    attrs {
+      name: "op_device"
+      type: STRING
+      s: ""
+    }
+    attrs {
+      name: "use_send_handler"
+      type: BOOLEAN
+      b: true
+    }
+    attrs {
+      name: "epmap"
+      type: STRINGS
+      strings: "127.0.0.1:8181"
+    }
+    attrs {
+      name: "op_role"
+      type: INT
+      i: 4
+    }
+    attrs {
+      name: "op_role_var"
+      type: STRINGS
+      strings: "fc_0.b_0"
+      strings: "fc_0.b_0.opti.trainer_2"
+    }
+    attrs {
+      name: "op_namescope"
+      type: STRING
+      s: "/"
+    }
+    attrs {
+      name: "op_callstack"
+      type: STRINGS
+      strings: "  File \"/home/beiyu/anaconda3/envs/paddle/lib/python3.6/site-packages/paddle/fluid/framework.py\", line 2610, in append_op\n    attrs=kwargs.get(\"attrs\", None))\n"
+      strings: "  File \"/home/beiyu/anaconda3/envs/paddle/lib/python3.6/site-packages/paddle_fl/paddle_fl/core/strategy/fl_distribute_transpiler.py\", line 242, in transpile\n    \"sync_mode\": not self.sync_mode,\n"
+      strings: "  File \"/home/beiyu/anaconda3/envs/paddle/lib/python3.6/site-packages/paddle_fl/paddle_fl/core/strategy/fl_strategy_base.py\", line 256, in _build_trainer_program_for_job\n    startup_program=startup_program)\n"
+      strings: "  File \"/home/beiyu/anaconda3/envs/paddle/lib/python3.6/site-packages/paddle_fl/paddle_fl/core/master/job_generator.py\", line 142, in generate_fl_job\n    job=local_job)\n"
+      strings: "  File \"/home/beiyu/PycharmProjects/pythonProject/gui/serverControlFrame.py\", line 135, in init_env\n    strategy, server_endpoints=endpoints, worker_num=int(self.config[\'parameter\'][\'num_users\']), output=output)\n"
+      strings: "  File \"serverFrame.py\", line 73, in <module>\n    sys.exit(app.exec_())\n"
+    }
+    attrs {
+      name: "merge_add"
+      type: BOOLEAN
+      b: false
+    }
+    attrs {
+      name: "sections"
+      type: LONGS
+    }
+    attrs {
+      name: "trainer_id"
+      type: INT
+      i: 0
+    }
+    attrs {
+      name: "send_varnames"
+      type: STRINGS
+    }
+    attrs {
+      name: "num"
+      type: INT
+      i: 0
+    }
+  }
+  ops {
+    inputs {
+      parameter: "X"
+      arguments: "fc_0.w_0.opti.trainer_2"
+    }
+    outputs {
+      parameter: "Out"
+      arguments: "__control_var@0.45607337136732884"
+    }
+    type: "send"
+    attrs {
+      name: "op_device"
+      type: STRING
+      s: ""
+    }
+    attrs {
+      name: "use_send_handler"
+      type: BOOLEAN
+      b: true
+    }
+    attrs {
+      name: "epmap"
+      type: STRINGS
+      strings: "127.0.0.1:8181"
+    }
+    attrs {
+      name: "op_role"
+      type: INT
+      i: 4
+    }
+    attrs {
+      name: "op_role_var"
+      type: STRINGS
+      strings: "fc_0.w_0"
+      strings: "fc_0.w_0.opti.trainer_2"
+    }
+    attrs {
+      name: "op_namescope"
+      type: STRING
+      s: "/"
+    }
+    attrs {
+      name: "op_callstack"
+      type: STRINGS
+      strings: "  File \"/home/beiyu/anaconda3/envs/paddle/lib/python3.6/site-packages/paddle/fluid/framework.py\", line 2610, in append_op\n    attrs=kwargs.get(\"attrs\", None))\n"
+      strings: "  File \"/home/beiyu/anaconda3/envs/paddle/lib/python3.6/site-packages/paddle_fl/paddle_fl/core/strategy/fl_distribute_transpiler.py\", line 242, in transpile\n    \"sync_mode\": not self.sync_mode,\n"
+      strings: "  File \"/home/beiyu/anaconda3/envs/paddle/lib/python3.6/site-packages/paddle_fl/paddle_fl/core/strategy/fl_strategy_base.py\", line 256, in _build_trainer_program_for_job\n    startup_program=startup_program)\n"
+      strings: "  File \"/home/beiyu/anaconda3/envs/paddle/lib/python3.6/site-packages/paddle_fl/paddle_fl/core/master/job_generator.py\", line 142, in generate_fl_job\n    job=local_job)\n"
+      strings: "  File \"/home/beiyu/PycharmProjects/pythonProject/gui/serverControlFrame.py\", line 135, in init_env\n    strategy, server_endpoints=endpoints, worker_num=int(self.config[\'parameter\'][\'num_users\']), output=output)\n"
+      strings: "  File \"serverFrame.py\", line 73, in <module>\n    sys.exit(app.exec_())\n"
+    }
+    attrs {
+      name: "merge_add"
+      type: BOOLEAN
+      b: false
+    }
+    attrs {
+      name: "sections"
+      type: LONGS
+    }
+    attrs {
+      name: "trainer_id"
+      type: INT
+      i: 0
+    }
+    attrs {
+      name: "send_varnames"
+      type: STRINGS
+    }
+    attrs {
+      name: "num"
+      type: INT
+      i: 0
+    }
+  }
+  ops {
+    inputs {
+      parameter: "X"
+      arguments: "fc_1.b_0.opti.trainer_2"
+    }
+    outputs {
+      parameter: "Out"
+      arguments: "__control_var@0.03748485893049647"
+    }
+    type: "send"
+    attrs {
+      name: "op_device"
+      type: STRING
+      s: ""
+    }
+    attrs {
+      name: "use_send_handler"
+      type: BOOLEAN
+      b: true
+    }
+    attrs {
+      name: "epmap"
+      type: STRINGS
+      strings: "127.0.0.1:8181"
+    }
+    attrs {
+      name: "op_role"
+      type: INT
+      i: 4
+    }
+    attrs {
+      name: "op_role_var"
+      type: STRINGS
+      strings: "fc_1.b_0"
+      strings: "fc_1.b_0.opti.trainer_2"
+    }
+    attrs {
+      name: "op_namescope"
+      type: STRING
+      s: "/"
+    }
+    attrs {
+      name: "op_callstack"
+      type: STRINGS
+      strings: "  File \"/home/beiyu/anaconda3/envs/paddle/lib/python3.6/site-packages/paddle/fluid/framework.py\", line 2610, in append_op\n    attrs=kwargs.get(\"attrs\", None))\n"
+      strings: "  File \"/home/beiyu/anaconda3/envs/paddle/lib/python3.6/site-packages/paddle_fl/paddle_fl/core/strategy/fl_distribute_transpiler.py\", line 242, in transpile\n    \"sync_mode\": not self.sync_mode,\n"
+      strings: "  File \"/home/beiyu/anaconda3/envs/paddle/lib/python3.6/site-packages/paddle_fl/paddle_fl/core/strategy/fl_strategy_base.py\", line 256, in _build_trainer_program_for_job\n    startup_program=startup_program)\n"
+      strings: "  File \"/home/beiyu/anaconda3/envs/paddle/lib/python3.6/site-packages/paddle_fl/paddle_fl/core/master/job_generator.py\", line 142, in generate_fl_job\n    job=local_job)\n"
+      strings: "  File \"/home/beiyu/PycharmProjects/pythonProject/gui/serverControlFrame.py\", line 135, in init_env\n    strategy, server_endpoints=endpoints, worker_num=int(self.config[\'parameter\'][\'num_users\']), output=output)\n"
+      strings: "  File \"serverFrame.py\", line 73, in <module>\n    sys.exit(app.exec_())\n"
+    }
+    attrs {
+      name: "merge_add"
+      type: BOOLEAN
+      b: false
+    }
+    attrs {
+      name: "sections"
+      type: LONGS
+    }
+    attrs {
+      name: "trainer_id"
+      type: INT
+      i: 0
+    }
+    attrs {
+      name: "send_varnames"
+      type: STRINGS
+    }
+    attrs {
+      name: "num"
+      type: INT
+      i: 0
+    }
+  }
+  ops {
+    inputs {
+      parameter: "X"
+      arguments: "fc_1.w_0.opti.trainer_2"
+    }
+    outputs {
+      parameter: "Out"
+      arguments: "__control_var@0.20949173579868052"
+    }
+    type: "send"
+    attrs {
+      name: "op_device"
+      type: STRING
+      s: ""
+    }
+    attrs {
+      name: "use_send_handler"
+      type: BOOLEAN
+      b: true
+    }
+    attrs {
+      name: "epmap"
+      type: STRINGS
+      strings: "127.0.0.1:8181"
+    }
+    attrs {
+      name: "op_role"
+      type: INT
+      i: 4
+    }
+    attrs {
+      name: "op_role_var"
+      type: STRINGS
+      strings: "fc_1.w_0"
+      strings: "fc_1.w_0.opti.trainer_2"
+    }
+    attrs {
+      name: "op_namescope"
+      type: STRING
+      s: "/"
+    }
+    attrs {
+      name: "op_callstack"
+      type: STRINGS
+      strings: "  File \"/home/beiyu/anaconda3/envs/paddle/lib/python3.6/site-packages/paddle/fluid/framework.py\", line 2610, in append_op\n    attrs=kwargs.get(\"attrs\", None))\n"
+      strings: "  File \"/home/beiyu/anaconda3/envs/paddle/lib/python3.6/site-packages/paddle_fl/paddle_fl/core/strategy/fl_distribute_transpiler.py\", line 242, in transpile\n    \"sync_mode\": not self.sync_mode,\n"
+      strings: "  File \"/home/beiyu/anaconda3/envs/paddle/lib/python3.6/site-packages/paddle_fl/paddle_fl/core/strategy/fl_strategy_base.py\", line 256, in _build_trainer_program_for_job\n    startup_program=startup_program)\n"
+      strings: "  File \"/home/beiyu/anaconda3/envs/paddle/lib/python3.6/site-packages/paddle_fl/paddle_fl/core/master/job_generator.py\", line 142, in generate_fl_job\n    job=local_job)\n"
+      strings: "  File \"/home/beiyu/PycharmProjects/pythonProject/gui/serverControlFrame.py\", line 135, in init_env\n    strategy, server_endpoints=endpoints, worker_num=int(self.config[\'parameter\'][\'num_users\']), output=output)\n"
+      strings: "  File \"serverFrame.py\", line 73, in <module>\n    sys.exit(app.exec_())\n"
+    }
+    attrs {
+      name: "merge_add"
+      type: BOOLEAN
+      b: false
+    }
+    attrs {
+      name: "sections"
+      type: LONGS
+    }
+    attrs {
+      name: "trainer_id"
+      type: INT
+      i: 0
+    }
+    attrs {
+      name: "send_varnames"
+      type: STRINGS
+    }
+    attrs {
+      name: "num"
+      type: INT
+      i: 0
+    }
+  }
+  ops {
+    inputs {
+      parameter: "X"
+      arguments: "fc_2.b_0.opti.trainer_2"
+    }
+    outputs {
+      parameter: "Out"
+      arguments: "__control_var@0.25373165800180875"
+    }
+    type: "send"
+    attrs {
+      name: "op_device"
+      type: STRING
+      s: ""
+    }
+    attrs {
+      name: "use_send_handler"
+      type: BOOLEAN
+      b: true
+    }
+    attrs {
+      name: "epmap"
+      type: STRINGS
+      strings: "127.0.0.1:8181"
+    }
+    attrs {
+      name: "op_role"
+      type: INT
+      i: 4
+    }
+    attrs {
+      name: "op_role_var"
+      type: STRINGS
+      strings: "fc_2.b_0"
+      strings: "fc_2.b_0.opti.trainer_2"
+    }
+    attrs {
+      name: "op_namescope"
+      type: STRING
+      s: "/"
+    }
+    attrs {
+      name: "op_callstack"
+      type: STRINGS
+      strings: "  File \"/home/beiyu/anaconda3/envs/paddle/lib/python3.6/site-packages/paddle/fluid/framework.py\", line 2610, in append_op\n    attrs=kwargs.get(\"attrs\", None))\n"
+      strings: "  File \"/home/beiyu/anaconda3/envs/paddle/lib/python3.6/site-packages/paddle_fl/paddle_fl/core/strategy/fl_distribute_transpiler.py\", line 242, in transpile\n    \"sync_mode\": not self.sync_mode,\n"
+      strings: "  File \"/home/beiyu/anaconda3/envs/paddle/lib/python3.6/site-packages/paddle_fl/paddle_fl/core/strategy/fl_strategy_base.py\", line 256, in _build_trainer_program_for_job\n    startup_program=startup_program)\n"
+      strings: "  File \"/home/beiyu/anaconda3/envs/paddle/lib/python3.6/site-packages/paddle_fl/paddle_fl/core/master/job_generator.py\", line 142, in generate_fl_job\n    job=local_job)\n"
+      strings: "  File \"/home/beiyu/PycharmProjects/pythonProject/gui/serverControlFrame.py\", line 135, in init_env\n    strategy, server_endpoints=endpoints, worker_num=int(self.config[\'parameter\'][\'num_users\']), output=output)\n"
+      strings: "  File \"serverFrame.py\", line 73, in <module>\n    sys.exit(app.exec_())\n"
+    }
+    attrs {
+      name: "merge_add"
+      type: BOOLEAN
+      b: false
+    }
+    attrs {
+      name: "sections"
+      type: LONGS
+    }
+    attrs {
+      name: "trainer_id"
+      type: INT
+      i: 0
+    }
+    attrs {
+      name: "send_varnames"
+      type: STRINGS
+    }
+    attrs {
+      name: "num"
+      type: INT
+      i: 0
+    }
+  }
+  ops {
+    inputs {
+      parameter: "X"
+      arguments: "fc_2.w_0.opti.trainer_2"
+    }
+    outputs {
+      parameter: "Out"
+      arguments: "__control_var@0.3162078654349"
+    }
+    type: "send"
+    attrs {
+      name: "op_device"
+      type: STRING
+      s: ""
+    }
+    attrs {
+      name: "use_send_handler"
+      type: BOOLEAN
+      b: true
+    }
+    attrs {
+      name: "epmap"
+      type: STRINGS
+      strings: "127.0.0.1:8181"
+    }
+    attrs {
+      name: "op_role"
+      type: INT
+      i: 4
+    }
+    attrs {
+      name: "op_role_var"
+      type: STRINGS
+      strings: "fc_2.w_0"
+      strings: "fc_2.w_0.opti.trainer_2"
+    }
+    attrs {
+      name: "op_namescope"
+      type: STRING
+      s: "/"
+    }
+    attrs {
+      name: "op_callstack"
+      type: STRINGS
+      strings: "  File \"/home/beiyu/anaconda3/envs/paddle/lib/python3.6/site-packages/paddle/fluid/framework.py\", line 2610, in append_op\n    attrs=kwargs.get(\"attrs\", None))\n"
+      strings: "  File \"/home/beiyu/anaconda3/envs/paddle/lib/python3.6/site-packages/paddle_fl/paddle_fl/core/strategy/fl_distribute_transpiler.py\", line 242, in transpile\n    \"sync_mode\": not self.sync_mode,\n"
+      strings: "  File \"/home/beiyu/anaconda3/envs/paddle/lib/python3.6/site-packages/paddle_fl/paddle_fl/core/strategy/fl_strategy_base.py\", line 256, in _build_trainer_program_for_job\n    startup_program=startup_program)\n"
+      strings: "  File \"/home/beiyu/anaconda3/envs/paddle/lib/python3.6/site-packages/paddle_fl/paddle_fl/core/master/job_generator.py\", line 142, in generate_fl_job\n    job=local_job)\n"
+      strings: "  File \"/home/beiyu/PycharmProjects/pythonProject/gui/serverControlFrame.py\", line 135, in init_env\n    strategy, server_endpoints=endpoints, worker_num=int(self.config[\'parameter\'][\'num_users\']), output=output)\n"
+      strings: "  File \"serverFrame.py\", line 73, in <module>\n    sys.exit(app.exec_())\n"
+    }
+    attrs {
+      name: "merge_add"
+      type: BOOLEAN
+      b: false
+    }
+    attrs {
+      name: "sections"
+      type: LONGS
+    }
+    attrs {
+      name: "trainer_id"
+      type: INT
+      i: 0
+    }
+    attrs {
+      name: "send_varnames"
+      type: STRINGS
+    }
+    attrs {
+      name: "num"
+      type: INT
+      i: 0
+    }
+  }
+  ops {
+    inputs {
+      parameter: "X"
+      arguments: "__control_var@0.8270440989426737"
+      arguments: "__control_var@0.45607337136732884"
+      arguments: "__control_var@0.03748485893049647"
+      arguments: "__control_var@0.20949173579868052"
+      arguments: "__control_var@0.25373165800180875"
+      arguments: "__control_var@0.3162078654349"
+    }
+    outputs {
+      parameter: "Out"
+      arguments: "__control_var@0.9282663194701407"
+    }
+    type: "send_barrier"
+    attrs {
+      name: "op_device"
+      type: STRING
+      s: ""
+    }
+    attrs {
+      name: "op_role_var"
+      type: STRINGS
+    }
+    attrs {
+      name: "op_callstack"
+      type: STRINGS
+      strings: "  File \"/home/beiyu/anaconda3/envs/paddle/lib/python3.6/site-packages/paddle/fluid/framework.py\", line 2610, in append_op\n    attrs=kwargs.get(\"attrs\", None))\n"
+      strings: "  File \"/home/beiyu/anaconda3/envs/paddle/lib/python3.6/site-packages/paddle_fl/paddle_fl/core/strategy/fl_distribute_transpiler.py\", line 259, in transpile\n    RPC_OP_ROLE_ATTR_NAME: RPC_OP_ROLE_ATTR_VALUE\n"
+      strings: "  File \"/home/beiyu/anaconda3/envs/paddle/lib/python3.6/site-packages/paddle_fl/paddle_fl/core/strategy/fl_strategy_base.py\", line 256, in _build_trainer_program_for_job\n    startup_program=startup_program)\n"
+      strings: "  File \"/home/beiyu/anaconda3/envs/paddle/lib/python3.6/site-packages/paddle_fl/paddle_fl/core/master/job_generator.py\", line 142, in generate_fl_job\n    job=local_job)\n"
+      strings: "  File \"/home/beiyu/PycharmProjects/pythonProject/gui/serverControlFrame.py\", line 135, in init_env\n    strategy, server_endpoints=endpoints, worker_num=int(self.config[\'parameter\'][\'num_users\']), output=output)\n"
+      strings: "  File \"serverFrame.py\", line 73, in <module>\n    sys.exit(app.exec_())\n"
+    }
+    attrs {
+      name: "op_namescope"
+      type: STRING
+      s: "/"
+    }
+    attrs {
+      name: "op_role"
+      type: INT
+      i: 4
+    }
+    attrs {
+      name: "endpoints"
+      type: STRINGS
+      strings: "127.0.0.1:8181"
+    }
+    attrs {
+      name: "half_async"
+      type: BOOLEAN
+      b: false
+    }
+    attrs {
+      name: "trainer_id"
+      type: INT
+      i: 2
+    }
+  }
+}
+version {
+  version: 1008004
+}
