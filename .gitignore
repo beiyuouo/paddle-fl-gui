@@ -22,3 +22,5 @@ __pycache__
 
 # path
 utils/models/*
+fl_job_config/*
+data/*
