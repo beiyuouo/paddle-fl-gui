@@ -3,6 +3,9 @@ from PyQt5.QtWidgets import *
 from PyQt5 import QtGui
 import threading
 import yaml
+
+from model import Model
+from utils.MyFLUtils import MFLScheduler
 from utils.testFrame import *
 
 
@@ -55,12 +58,15 @@ class ServerControlFrame(QWidget):
         self.startBtn.resize(100, 25)
         self.startBtn.move(150, 400)
         self.startBtn.setDisabled(True)
-        self.startBtn.clicked.connect(self.start_train)
+        # train thread
+        self.trainThread = threading.Thread(target=self.start_train)
+        self.startBtn.clicked.connect(self.trainThread.start)
 
         self.stopBtn = QPushButton('stop', self)
         self.stopBtn.resize(100, 25)
         self.stopBtn.move(275, 400)
         self.stopBtn.setDisabled(True)
+        self.stopBtn.clicked.connect(self.stop_train)
 
         self.testBtn = QPushButton('test', self)
         self.testBtn.resize(100, 25)
@@ -77,6 +83,7 @@ class ServerControlFrame(QWidget):
         self.setWindowTitle('ServerControlFrame {}'.format(self.id))
         self.show()
 
+
     def open_test_frame(self):
         self.testframe = TestFrame()
         self.testframe.show()
@@ -84,24 +91,10 @@ class ServerControlFrame(QWidget):
     def init_env(self):
         from paddle_fl.paddle_fl.core.scheduler.agent_master import FLScheduler
         import paddle.fluid as fluid
-        import paddle_fl as fl
+        # import paddle_fl as fl
         from paddle_fl.paddle_fl.core.master.job_generator import JobGenerator
         from paddle_fl.paddle_fl.core.strategy.fl_distribute_transpiler import FLDistributeTranspiler
         from paddle_fl.paddle_fl.core.strategy.fl_strategy_base import FLStrategyFactory, FedAvgStrategy
-
-        class Model(object):
-            def __init__(self):
-                pass
-
-            def mlp(self, inputs, label, hidden_size=128):
-                self.concat = fluid.layers.concat(inputs, axis=1)
-                self.fc1 = fluid.layers.fc(input=self.concat, size=256, act='relu')
-                self.fc2 = fluid.layers.fc(input=self.fc1, size=128, act='relu')
-                self.predict = fluid.layers.fc(input=self.fc2, size=2, act='softmax')
-                self.sum_cost = fluid.layers.cross_entropy(input=self.predict, label=label)
-                self.accuracy = fluid.layers.accuracy(input=self.predict, label=label)
-                self.loss = fluid.layers.reduce_mean(self.sum_cost)
-                self.startup_program = fluid.default_startup_program()
 
         inputs = [fluid.layers.data(
             name=str(slot_id), shape=[5],
@@ -138,14 +131,12 @@ class ServerControlFrame(QWidget):
         print('finish!')
 
         self.worker_num = int(self.config['parameter']['num_users'])
+
         self.server_num = 1
         # Define the number of worker/server and the port for scheduler
-        self.scheduler = FLScheduler(self.worker_num, self.server_num, port=int(self.config['scheduler']['port']))
+        self.scheduler = MFLScheduler(self.worker_num, self.server_num, port=int(self.config['scheduler']['port']))
         self.scheduler.set_sample_worker_num(self.worker_num)
-
-        # self.listenThread = threading.Thread(target=self.scheduler.init_env)
-        # self.listenThread.start()
-        # self.listenThread.join()
+        # self.scheduler.set_sample_worker_num(max(1, int(float(self.config['parameter']['frac']) * self.worker_num)))
 
         import paddle_fl as fl
         import paddle.fluid as fluid
@@ -200,11 +191,18 @@ class ServerControlFrame(QWidget):
         self.startBtn.setDisabled(False)
 
     def start_train(self):
-        self.scheduler.start_fl_training()
+        self.stopBtn.setDisabled(False)
+        self.startBtn.setDisabled(True)
+        self.scheduler.start_fl_training_with_round(int(self.config['parameter']['round']))
+        print('train ok!')
+        self.stopBtn.setDisabled(True)
+        self.startBtn.setDisabled(False)
+        QMessageBox.information(self, 'training progress', 'The model has been trained!!', QMessageBox.Ok)
 
     def stop_train(self):
-        pass
-        # self.scheduler.stop()
+        print(self.trainThread.is_alive())
+        # self.stopBtn.setDisabled(True)
+        # self.startBtn.setDisabled(False)
 
 
 if __name__ == '__main__':

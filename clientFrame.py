@@ -3,7 +3,11 @@ import sys
 from PyQt5.QtWidgets import *
 from PyQt5 import QtGui
 import yaml
+
+from utils.reader import reader
 from utils.testFrame import *
+
+import threading
 
 
 class ClientFrame(QWidget):
@@ -82,15 +86,35 @@ class ClientFrame(QWidget):
         job._scheduler_ep = '{}:{}'.format(self.config['scheduler']['ip'], self.config['scheduler']['port'])
         # print(job._trainer_send_program)
 
-        trainer = FLTrainerFactory().create_fl_trainer(job)
+        self.trainer = FLTrainerFactory().create_fl_trainer(job)
         use_cuda = False
         place = fluid.CUDAPlace(0) if use_cuda else fluid.CPUPlace()
-        trainer._current_ep = '{}:{}'.format(self.config['client']['ip'], int(self.config['client']['port']) + self.id)
+        self.trainer._current_ep = '{}:{}'.format(self.config['client']['ip'],
+                                                  int(self.config['client']['port']) + self.id)
         print('prepared ok')
-        trainer.start(place=place)
-        trainer._logger.setLevel(logging.DEBUG)
+        self.trainer.start(place=place)
+        self.trainer._logger.setLevel(logging.DEBUG)
         print('connected ok')
         self.processLabel.setText('connected')
+        self.trainThread = threading.Thread(target=self.train)
+        self.processLabel.setText('training')
+        self.trainThread.start()
+        self.trainThread.join()
+        self.processLabel.setText('finished')
+
+    def train(self):
+        data = reader(self.id)
+        output_folder = "fl_model"
+        step_i = 0
+        while not self.trainer.stop():
+            step_i += 1
+            print("batch %d start train" % step_i)
+            self.trainer.run(feed=data, fetch=[])
+            if self.id == 0:
+                print("start saving model")
+                self.trainer.save_inference_program(output_folder)
+            if step_i >git int(self.config['parameter']['round']):
+                break
 
 
 if __name__ == '__main__':

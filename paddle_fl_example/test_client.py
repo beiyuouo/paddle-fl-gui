@@ -6,6 +6,8 @@ import sys
 
 import logging
 
+from utils.reader import reader
+
 
 def reader():
     for i in range(10):

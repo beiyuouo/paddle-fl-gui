@@ -1,6 +1,6 @@
 parameter:
   lr: 2e-5
-  round: 10
+  round: 5
   num_users: 3
   frac: 0.7
 

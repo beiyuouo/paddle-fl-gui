@@ -1,7 +1,8 @@
 parameter:
   lr: 1e-2
-  epochs: 5
+  epochs: 3
   bs: 1
+  round: 5
 
 path:
   output_path: 'fl_model'
