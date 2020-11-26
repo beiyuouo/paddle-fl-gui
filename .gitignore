@@ -14,7 +14,9 @@ __pycache__
 *.npy
 *.npz
 *.png
+*.PNG
 *.jpg
+*.JPG
 *.jpeg
 
 # notebook checkpoints
