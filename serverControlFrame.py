@@ -40,9 +40,10 @@ class ServerControlFrame(QWidget):
         serLabel = QLabel('server')
         serProBar = QProgressBar()
         serProLabel = QLabel('{} %'.format(0))
-        self.cgvBox.addWidget(serLabel)
-        self.cgvBox.addWidget(serProBar)
-        self.cgvBox.addWidget(serProLabel)
+        # self.cgvBox.addWidget(serLabel)
+        # self.cgvBox.addWidget(serProBar)
+        # self.cgvBox.addWidget(serProLabel)
+        # self.clientGroupList.append()
         self.clientGroup.setLayout(self.cgvBox)
 
         self.processLabel = QLabel('noconnect', self)
@@ -82,7 +83,6 @@ class ServerControlFrame(QWidget):
 
         self.setWindowTitle('ServerControlFrame {}'.format(self.id))
         self.show()
-
 
     def open_test_frame(self):
         self.testframe = TestFrame()
@@ -171,18 +171,18 @@ class ServerControlFrame(QWidget):
         # scheduler.start_fl_training()
 
     def wait_agent(self):
-        print('?????????')
+        # print('?????????')
         cli_set = set([])
-        print(threading.activeCount())
+        # print(threading.activeCount())
         while self.connected_agent < self.worker_num:
             # print('{} ? {}'.format(self.connected_agent, self.worker_num))
             # print(self.scheduler.fl_workers)
             # print(self.scheduler.fl_servers)
             if self.connected_agent != len(self.scheduler.fl_workers):
-                print(self.scheduler.fl_workers, cli_set)
+                # print(self.scheduler.fl_workers, cli_set)
                 new_cli = set(self.scheduler.fl_workers) - cli_set
                 self.clientGroupList[self.connected_agent][3].setText('connected')
-                print(new_cli)
+                # print(new_cli)
                 new_cli = list(new_cli)
                 print('get client {} connection'.format(new_cli))
                 cli_set = set(self.scheduler.fl_workers)
@@ -193,10 +193,13 @@ class ServerControlFrame(QWidget):
     def start_train(self):
         self.stopBtn.setDisabled(False)
         self.startBtn.setDisabled(True)
-        self.scheduler.start_fl_training_with_round(int(self.config['parameter']['round']))
+        self.processLabel.setText('training')
+        self.scheduler.start_fl_training_with_round(int(self.config['parameter']['round']),
+                                                    label=self.clientGroupList)
         print('train ok!')
         self.stopBtn.setDisabled(True)
         self.startBtn.setDisabled(False)
+        self.processLabel.setText('finished')
         QMessageBox.information(self, 'training progress', 'The model has been trained!!', QMessageBox.Ok)
 
     def stop_train(self):

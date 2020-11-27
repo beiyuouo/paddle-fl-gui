@@ -43,6 +43,7 @@ class ServerFrame(QWidget):
             self.paramTab.setItem(i, 1, QTableWidgetItem(it1))
             # print(it0, it1)
 
+        '''
         self.clientTab = QTableWidget(self)
         self.clientTab.resize(300, 300)
         self.clientTab.move(450, 50)
@@ -51,6 +52,28 @@ class ServerFrame(QWidget):
         self.clientTab.setColumnWidth(1, 145)
 
         self.paramTab.setHorizontalHeaderLabels(['client_id', 'ip:port'])
+        '''
+
+        self.model_path_label = QLabel('model save path:', self)
+        self.model_path_text = QLineEdit(self.config['path']['models_save_path'], self)
+        self.model_path_btn = QPushButton('...', self)
+        self.model_path_label.move(450, 70)
+        self.model_path_text.resize(275, 20)
+        self.model_path_text.move(450, 100)
+        self.model_path_btn.resize(20, 20)
+        self.model_path_btn.move(730, 100)
+
+        self.job_path_label = QLabel('job save path:', self)
+        self.job_path_text = QLineEdit(self.config['path']['job_path'], self)
+        self.job_path_btn = QPushButton('...', self)
+        self.job_path_label.move(450, 170)
+        self.job_path_text.resize(275, 20)
+        self.job_path_text.move(450, 200)
+        self.job_path_btn.resize(20, 20)
+        self.job_path_btn.move(730, 200)
+
+
+
 
         self.startBtn = QPushButton('start', self)
         self.startBtn.move(550, 400)

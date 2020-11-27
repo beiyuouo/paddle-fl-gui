@@ -104,7 +104,7 @@ class ClientFrame(QWidget):
 
     def train(self):
         data = reader(self.id)
-        output_folder = "fl_model"
+        output_folder = self.config['path']['output_path']
         step_i = 0
         while not self.trainer.stop():
             step_i += 1

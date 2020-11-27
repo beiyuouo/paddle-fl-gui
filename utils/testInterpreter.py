@@ -69,7 +69,7 @@ def get_result(data, param_dir="./"):
     outputs = outputs[0]
     probs = fluid.layers.softmax(outputs, axis=-1)
     exe = fluid.Executor(fluid.CPUPlace())
-    exe.run(fluid. default_startup_program())
+    exe.run(fluid.default_startup_program())
 
     def if_exist(var):
         b = os.path.exists(os.path.join(param_dir, var.name))
@@ -85,6 +85,7 @@ img_path = '0a6a5956-58cf-4f17-9e39-7e0d17310f67.png'
 img_path = '1-s2.0-S1684118220300608-main.pdf-002.jpg'
 # img_path = 'utils/InterpretDL/tutorials/assets/catdog.png'
 model_path = 'models/resnet18/model_with_code'
+
 
 class MyGradCAMInterpreter(it.GradCAMInterpreter):
     def __init__(self,
@@ -169,8 +170,10 @@ class MyGradCAMInterpreter(it.GradCAMInterpreter):
 
         return heatmap, labels
 
+
 sg = it.GradCAMInterpreter(paddle_model, model_path, use_cuda=False,
                            model_input_shape=[3, 224, 224])
-gradients, labels, output = sg.interpret(img_path, visual=True, target_layer_name=last_layer_name, save_path='sg_test.jpg')
+gradients, labels, output = sg.interpret(img_path, visual=True, target_layer_name=last_layer_name,
+                                         save_path='sg_test.jpg')
 
 print(labels, output)

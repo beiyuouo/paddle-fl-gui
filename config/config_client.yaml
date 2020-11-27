@@ -5,8 +5,8 @@ parameter:
   round: 5
 
 path:
-  output_path: 'fl_model'
-  job_path: 'fl_job_config'
+  output_path: 'fl_model/'
+  job_path: 'fl_job_config/'
 
 server:
   ip: '127.0.0.1'
