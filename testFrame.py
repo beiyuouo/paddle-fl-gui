@@ -1,8 +1,11 @@
 import sys
+
+import yaml
 from PyQt5.QtWidgets import *
 from PyQt5 import QtGui
 
 # import interpretdl as it
+
 import utils.InterpretDL.interpretdl as it
 from paddle.fluid.initializer import Constant
 from paddle.fluid.param_attr import ParamAttr
@@ -13,11 +16,13 @@ from utils.models.resnet18.model_with_code.model import x2paddle_net
 
 from datetime import datetime
 
+from utils.testInterpreter import MyGradCAMInterpreter, plot_bounding_box
+
 last_layer_name = 'x2paddle_188.tmp_0'
 model_path = 'utils/models/resnet18/model_with_code'
 test_result = 0
 test_prob = 0
-test_dic = {0: 'normal', 1: 'pun', 2: 'covid19'}
+test_dic = {0: 'pneumonia', 1: 'normal', 2: 'COVID-19'}
 
 
 def paddle_model(data):
@@ -56,10 +61,11 @@ def paddle_model(data):
 
 
 class TestFrame(QWidget):
-    def __init__(self):
+    def __init__(self, config):
         super().__init__()
         print('called')
         self.initGUI()
+        self.config = config
         self.modelPath = model_path
 
     def initGUI(self):
@@ -96,13 +102,20 @@ class TestFrame(QWidget):
     def processGradCAM(self):
         img_path = self.picPath
         # print(self.picPath)
-        sg = it.GradCAMInterpreter(paddle_model, self.modelPath, use_cuda=False,
-                                   model_input_shape=[3, 224, 224])
-        self.resultPath = 'result_{}_{}_{}_{}.jpg'.format(
+        sg = MyGradCAMInterpreter(paddle_model, self.modelPath, use_cuda=False,
+                                  model_input_shape=[3, 224, 224])
+        self.resultPath = 'reports/result_{:02d}_{:02d}_{:02d}_{:02d}'.format(
             datetime.now().day, datetime.now().hour, datetime.now().minute, datetime.now().second)
         # print(self.resultPath)
-        gradients, labels, output = sg.interpret(img_path, visual=True, target_layer_name=last_layer_name, save_path=self.resultPath)
+        gradients, labels, output, img0 = sg.interpret(img_path, thresholds=float(self.config['test']['thresholds']),
+                                                       visual=True, target_layer_name=last_layer_name,
+                                                       save_path=self.resultPath)
         # print(labels, output)
+        for label, out in zip(labels, output):
+            print('label: {}, prop: {}'.format(label, out))
+
+        plot_bounding_box(labels, gradients, img0, self.resultPath)
+
         test_result = labels[0][0]
         test_prob = output[0][test_result]
 
@@ -116,5 +129,6 @@ class TestFrame(QWidget):
 
 if __name__ == '__main__':
     app = QApplication(sys.argv)
-    testFrame = TestFrame()
+    yamlstream = open('config/config_client.yaml')
+    testFrame = TestFrame(yaml.load(yamlstream))
     sys.exit(app.exec_())

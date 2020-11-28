@@ -27,3 +27,4 @@ utils/models/*
 fl_job_config/*
 data/*
 fl_model/*
+result_*/

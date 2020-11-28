@@ -14,3 +14,5 @@ matplotlib~=3.3.1
 pyqt5~=5.15.1
 interpretdl~=0.1.6
 pyyaml~=5.3.1
+zmq~=0.0.0
+pyzmq~=19.0.2

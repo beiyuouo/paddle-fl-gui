@@ -4,8 +4,8 @@ from PyQt5.QtWidgets import *
 from PyQt5 import QtGui
 import yaml
 
+from testFrame import TestFrame
 from utils.reader import reader
-from utils.testFrame import *
 
 import threading
 
@@ -67,7 +67,7 @@ class ClientFrame(QWidget):
         self.show()
 
     def open_test_frame(self):
-        self.testframe = TestFrame()
+        self.testframe = TestFrame(self.config)
         self.testframe.show()
 
     def connect_server(self):

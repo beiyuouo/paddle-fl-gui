@@ -8,6 +8,9 @@ path:
   models_save_path: 'models/'
   job_path: 'fl_job_config/'
 
+test:
+  thresholds: 0.4
+
 server:
   ip: '127.0.0.1'
   port: '8181'

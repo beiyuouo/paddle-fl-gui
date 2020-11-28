@@ -2,7 +2,6 @@ import sys
 from PyQt5.QtWidgets import *
 from PyQt5 import QtGui
 import yaml
-from utils.testFrame import *
 
 from serverControlFrame import *
 
@@ -71,9 +70,6 @@ class ServerFrame(QWidget):
         self.job_path_text.move(450, 200)
         self.job_path_btn.resize(20, 20)
         self.job_path_btn.move(730, 200)
-
-
-
 
         self.startBtn = QPushButton('start', self)
         self.startBtn.move(550, 400)

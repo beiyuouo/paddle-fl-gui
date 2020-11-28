@@ -8,6 +8,9 @@ path:
   output_path: 'fl_model/'
   job_path: 'fl_job_config/'
 
+test:
+  thresholds: 0.2
+
 server:
   ip: '127.0.0.1'
   port: '8181'

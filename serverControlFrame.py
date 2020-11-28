@@ -5,8 +5,8 @@ import threading
 import yaml
 
 from model import Model
+from testFrame import TestFrame
 from utils.MyFLUtils import MFLScheduler
-from utils.testFrame import *
 
 
 class ServerControlFrame(QWidget):
@@ -85,7 +85,7 @@ class ServerControlFrame(QWidget):
         self.show()
 
     def open_test_frame(self):
-        self.testframe = TestFrame()
+        self.testframe = TestFrame(self.config)
         self.testframe.show()
 
     def init_env(self):
