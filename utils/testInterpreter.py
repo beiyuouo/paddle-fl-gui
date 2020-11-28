@@ -219,9 +219,11 @@ def mix_heatmap(heatmap, org, label):
     x = np.uint8(x)
     x = cv2.cvtColor(x, cv2.COLOR_BGR2RGB)
     k, xx, yy, ww, hh = label
+    xx, yy, ww, hh = int(xx), int(yy), int(ww), int(hh)
+    print(xx, yy, ww, hh)
     color = (255, 0, 0)
-    x = cv2.rectangle(x, (xx, yy), (ww, hh), color, 3)
-    x = cv2.putText(x, k, (xx, yy-20), cv2.FONT_HERSHEY_COMPLEX, 3, color, 5)
+    x = cv2.rectangle(x, (xx, yy), (xx+ww, yy+hh), color, 2)
+    x = cv2.putText(x, k, (xx + 10, yy + 10), cv2.FONT_HERSHEY_COMPLEX_SMALL, 0.3, color, 1)
     x = Image.fromarray(x)
     import matplotlib.pyplot as plt
     plt.imshow(x)
@@ -231,13 +233,15 @@ def mix_heatmap(heatmap, org, label):
 
 def plot_bounding_box(labels, heatmaps, org, save_path):
     import scipy.ndimage.filters as filters
-    img_width, img_height = 224, 224
+    # img_width, img_height = 224, 224
+    img_width, img_height = 7, 7
 
-    crop_del = 16
-    rescale_factor = 1
+    crop_del = 0
+    rescale_factor = 32
     class_index = ['pneumonia', 'normal', 'COVID-19']
-    avg_size = np.array([[411.8, 512.5, 276.5, 304.5], [411.8, 512.5, 276.5, 304.5],
-                         [411.8, 512.5, 276.5, 304.5]])
+    avg_size = np.array([[502.4, 458.7, 400.0, 400.0], [411.8, 512.5, 400.0, 400.0],
+                         [434.3, 366.7, 400.0, 400.0]])
+    avg_size = avg_size / 4
 
     '''
     class_index = ['Atelectasis', 'Cardiomegaly', 'Effusion', 'Infiltration', 'Mass', 'Nodule', 'Pneumonia',
@@ -262,7 +266,8 @@ def plot_bounding_box(labels, heatmaps, org, save_path):
         if np.isnan(data).any():
             continue
 
-        w_k, h_k = (avg_size[label][2:4] * (256 / 1024)).astype(np.int)
+        # w_k, h_k = (avg_size[label][2:4] * (256 / 1024)).astype(np.int)
+        w_k, h_k = (avg_size[label][2:4] * 1/32).astype(np.float)
 
         # Find local maxima
         neighborhood_size = 100
@@ -282,11 +287,11 @@ def plot_bounding_box(labels, heatmaps, org, save_path):
         print(xy)
 
         for pt in xy:
-            upper = int(max(pt[0] - (h_k / 2), 0.))
-            left = int(max(pt[1] - (w_k / 2), 0.))
+            upper = max(pt[0] - (h_k / 2), 0.)
+            left = max(pt[1] - (w_k / 2), 0.)
 
-            right = int(min(left + w_k, img_width))
-            lower = int(min(upper + h_k, img_height))
+            right = min(left + w_k, img_width)
+            lower = min(upper + h_k, img_height)
 
             prediction_sent = '%s %.1f %.1f %.1f %.1f' % (class_index[label], (left + crop_del) * rescale_factor,
                                                           (upper + crop_del) * rescale_factor,
@@ -297,9 +302,10 @@ def plot_bounding_box(labels, heatmaps, org, save_path):
                          (right - left) * rescale_factor,
                          (lower - upper) * rescale_factor])
             print(bbox[-1])
-            cnt += 1
+
             x = mix_heatmap(heatmap, org, bbox[-1])
             x.save('{}/{}_with_bbox.jpg'.format(save_path, cnt))
+            cnt += 1
 
 
 if __name__ == '__main__':

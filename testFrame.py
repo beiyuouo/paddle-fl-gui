@@ -1,3 +1,4 @@
+import os
 import sys
 
 import yaml
@@ -119,7 +120,7 @@ class TestFrame(QWidget):
         test_result = labels[0][0]
         test_prob = output[0][test_result]
 
-        jpg = QtGui.QPixmap(self.resultPath).scaled(self.resultpicLabel.width(), self.resultpicLabel.height())
+        jpg = QtGui.QPixmap(os.path.join(self.resultPath, '{}_with_bbox.jpg'.format(test_result))).scaled(self.resultpicLabel.width(), self.resultpicLabel.height())
         self.resultpicLabel.setPixmap(jpg)
         # print(test_prob * 100)
         str = 'result: {},\nprobability: {:.2f}%'.format(test_dic[test_result], test_prob * 100)
