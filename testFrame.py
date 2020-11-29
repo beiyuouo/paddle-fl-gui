@@ -90,7 +90,12 @@ class TestFrame(QWidget):
         self.choosepicBtn.move(100, 350)
         self.processBtn.move(275, 175)
         self.resultpicLabel.move(350, 100)
-        self.resultLabel.move(350, 300)
+        self.resultLabel.move(350, 280)
+
+        self.reportBtn = QPushButton("generate report", self)
+        self.reportBtn.resize(200, 30)
+        self.reportBtn.move(350, 350)
+
         self.setWindowTitle('TestFrame')
         self.show()
 

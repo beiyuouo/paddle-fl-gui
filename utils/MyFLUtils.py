@@ -151,7 +151,7 @@ class MFedAvgTrainer(FedAvgTrainer):
         self.exe.run(self._recv_program)
         epoch = 0
         train_prompt = 'train_loss'
-        plot_prompt = Ploter(train_prompt)
+        # plot_prompt = Ploter(train_prompt)
         loss_list = []
         # lossLabel = lossLabel[0]
         for i in range(num_epoch):
@@ -162,14 +162,14 @@ class MFedAvgTrainer(FedAvgTrainer):
                 for t in loss_res:
                     loss_i += t
             loss_list.append(loss_i)
-            plot_prompt.append(title=train_prompt, step=i, value=loss_i)
+            # plot_prompt.append(title=train_prompt, step=i, value=loss_i)
             # print(loss_list, plot_prompt, loss_i)
             # print(id(lossLabel))
-            plot_prompt.plot(path='loss_temp_{}.jpg'.format(mid))
             # time.sleep(2)
 
             self.cur_step += 1
             epoch += 1
+        # plot_prompt.plot(path='loss_temp_{}.jpg'.format(mid))
         self._logger.debug("begin to run send program")
         self.exe.run(self._send_program)
         return loss_list

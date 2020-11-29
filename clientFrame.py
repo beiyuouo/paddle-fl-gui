@@ -1,5 +1,6 @@
 import sys
 from time import sleep
+import numpy as np
 
 from PyQt5.QtWidgets import *
 from PyQt5 import QtGui
@@ -10,6 +11,8 @@ from utils.MyFLUtils import MFLTrainerFactory
 from utils.reader import reader
 
 import threading
+
+import matplotlib.pyplot as plt
 
 
 class ClientFrame(QWidget):
@@ -64,6 +67,7 @@ class ClientFrame(QWidget):
         self.testBtn = QPushButton('test', self)
         self.testBtn.move(550, 400)
         self.testBtn.clicked.connect(self.open_test_frame)
+        self.update_loss_label()
 
         self.setWindowTitle('Client {}'.format(self.id))
         self.show()
@@ -73,10 +77,8 @@ class ClientFrame(QWidget):
         self.testframe.show()
 
     def update_loss_label(self):
-        while True:
-            jpg = QtGui.QPixmap('loss_temp_{}.jpg'.format(self.id)).scaled(self.lossLabel.width(), self.lossLabel.height())
-            self.lossLabel.setPixmap(jpg)
-            sleep(2)
+        jpg = QtGui.QPixmap('loss_temp_{}.jpg'.format(self.id)).scaled(self.lossLabel.width(), self.lossLabel.height())
+        self.lossLabel.setPixmap(jpg)
 
     def connect_server(self):
         from paddle import fluid
@@ -114,12 +116,18 @@ class ClientFrame(QWidget):
         output_folder = self.config['path']['output_path']
         step_i = 0
         print(id(self.lossLabel))
-        self.lossThread = threading.Thread(target=self.update_loss_label)
-        self.lossThread.start()
+        # self.lossThread = threading.Thread(target=self.update_loss_label)
+        # self.lossThread.start()
+        loss_list = np.array([])
         while not self.trainer.stop():
             step_i += 1
             print("batch %d start train" % step_i)
-            self.trainer.run_with_epoch(reader, [], self.config['parameter']['epochs'], self.id)
+            loss_list = np.concatenate((loss_list,
+                                        self.trainer.run_with_epoch(reader, [], int(self.config['parameter']['epochs']), self.id)))
+            plt.plot(range(0, len(loss_list)), loss_list)
+            plt.legend(['train_loss'], loc='upper left')
+            plt.savefig('loss_temp_{}.jpg'.format(self.id))
+            self.update_loss_label()
             if self.id == 0:
                 print("start saving model")
                 self.trainer.save_inference_program(output_folder)
