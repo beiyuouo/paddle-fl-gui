@@ -10,4 +10,4 @@ def reader_example(id):
 
 
 def reader(id):
-    return reader_example(id)
+    return [reader_example(id)]

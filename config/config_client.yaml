@@ -4,6 +4,10 @@ parameter:
   bs: 1
   round: 5
 
+show:
+  loss: True
+  contribution: True
+
 path:
   output_path: 'fl_model/'
   job_path: 'fl_job_config/'

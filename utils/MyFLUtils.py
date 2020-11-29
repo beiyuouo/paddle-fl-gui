@@ -6,7 +6,11 @@ import random
 
 from paddle import fluid
 from paddle_fl.paddle_fl.core import FLScheduler, FLWorkerAgent
-from paddle_fl.paddle_fl.core.trainer.fl_trainer import FLTrainer, FedAvgTrainer
+from paddle_fl.paddle_fl.core.trainer.fl_trainer import FLTrainer, FedAvgTrainer, SecAggTrainer
+
+from paddle.utils.plot import Ploter
+
+from PyQt5 import QtGui
 
 
 def recv_and_parse_kv(socket):
@@ -80,9 +84,9 @@ class MFLScheduler(FLScheduler):
 
     def change_label(self, labels, idx, rounds):
         name_label, pro_bar, pro_label, state_label = labels
-        prog = (idx+1)/rounds
-        pro_bar.setValue(prog*100)
-        pro_label.setText('{} %'.format(prog*100))
+        prog = (idx + 1) / rounds
+        pro_bar.setValue(prog * 100)
+        pro_label.setText('{} %'.format(prog * 100))
 
 
 class MFLWorkerAgent(FLWorkerAgent):
@@ -96,6 +100,26 @@ class MFLWorkerAgent(FLWorkerAgent):
             time.sleep(3)
             return True
         return False
+
+
+class MFLTrainerFactory(object):
+    def __init__(self):
+        pass
+
+    def create_fl_trainer(self, job):
+        strategy = job._strategy
+        trainer = None
+        if strategy._fed_avg == True:
+            trainer = MFedAvgTrainer()
+            trainer.set_trainer_job(job)
+        elif strategy._dpsgd == True:
+            trainer = MFLTrainer()
+            trainer.set_trainer_job(job)
+        elif strategy._sec_agg == True:
+            trainer = SecAggTrainer()
+            trainer.set_trainer_job(job)
+        trainer.set_trainer_job(job)
+        return trainer
 
 
 class MFLTrainer(FLTrainer):
@@ -122,18 +146,28 @@ class MFedAvgTrainer(FedAvgTrainer):
         self.exe = fluid.Executor(place)
         self.exe.run(self._startup_program)
 
-    def run_with_epoch(self, reader, feeder, fetch, num_epoch):
+    def run_with_epoch(self, reader, fetch, num_epoch, mid):
         self._logger.debug("begin to run recv program")
         self.exe.run(self._recv_program)
         epoch = 0
+        train_prompt = 'train_loss'
+        plot_prompt = Ploter(train_prompt)
         loss_list = []
+        # lossLabel = lossLabel[0]
         for i in range(num_epoch):
-            loss_i = 0
-            for data in reader():
-                loss_i += self.exe.run(self._main_program,
-                                       feed=feeder.feed(data),
-                                       fetch_list=fetch)
+            loss_i = 0.0
+            for data in reader(mid):
+                # print(data)
+                loss_res = self.exe.run(self._main_program, feed=data, fetch_list=fetch)
+                for t in loss_res:
+                    loss_i += t
             loss_list.append(loss_i)
+            plot_prompt.append(title=train_prompt, step=i, value=loss_i)
+            # print(loss_list, plot_prompt, loss_i)
+            # print(id(lossLabel))
+            plot_prompt.plot(path='loss_temp_{}.jpg'.format(mid))
+            # time.sleep(2)
+
             self.cur_step += 1
             epoch += 1
         self._logger.debug("begin to run send program")

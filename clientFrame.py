@@ -1,10 +1,12 @@
 import sys
+from time import sleep
 
 from PyQt5.QtWidgets import *
 from PyQt5 import QtGui
 import yaml
 
 from testFrame import TestFrame
+from utils.MyFLUtils import MFLTrainerFactory
 from utils.reader import reader
 
 import threading
@@ -70,6 +72,12 @@ class ClientFrame(QWidget):
         self.testframe = TestFrame(self.config)
         self.testframe.show()
 
+    def update_loss_label(self):
+        while True:
+            jpg = QtGui.QPixmap('loss_temp_{}.jpg'.format(self.id)).scaled(self.lossLabel.width(), self.lossLabel.height())
+            self.lossLabel.setPixmap(jpg)
+            sleep(2)
+
     def connect_server(self):
         from paddle import fluid
         from paddle_fl.paddle_fl.core.trainer.fl_trainer import FLTrainerFactory
@@ -86,7 +94,7 @@ class ClientFrame(QWidget):
         job._scheduler_ep = '{}:{}'.format(self.config['scheduler']['ip'], self.config['scheduler']['port'])
         # print(job._trainer_send_program)
 
-        self.trainer = FLTrainerFactory().create_fl_trainer(job)
+        self.trainer = MFLTrainerFactory().create_fl_trainer(job)
         use_cuda = False
         place = fluid.CUDAPlace(0) if use_cuda else fluid.CPUPlace()
         self.trainer._current_ep = '{}:{}'.format(self.config['client']['ip'],
@@ -103,13 +111,15 @@ class ClientFrame(QWidget):
         self.processLabel.setText('finished')
 
     def train(self):
-        data = reader(self.id)
         output_folder = self.config['path']['output_path']
         step_i = 0
+        print(id(self.lossLabel))
+        self.lossThread = threading.Thread(target=self.update_loss_label)
+        self.lossThread.start()
         while not self.trainer.stop():
             step_i += 1
             print("batch %d start train" % step_i)
-            self.trainer.run(feed=data, fetch=[])
+            self.trainer.run_with_epoch(reader, [], self.config['parameter']['epochs'], self.id)
             if self.id == 0:
                 print("start saving model")
                 self.trainer.save_inference_program(output_folder)

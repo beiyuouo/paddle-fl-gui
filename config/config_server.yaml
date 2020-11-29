@@ -4,6 +4,10 @@ parameter:
   num_users: 3
   frac: 0.7
 
+show:
+  loss: True
+  contribution: True
+
 path:
   models_save_path: 'models/'
   job_path: 'fl_job_config/'
