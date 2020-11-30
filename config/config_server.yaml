@@ -3,6 +3,7 @@ parameter:
   round: 5
   num_users: 3
   frac: 0.7
+  model: 'mlp'
 
 show:
   loss: True

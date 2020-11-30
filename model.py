@@ -208,6 +208,13 @@ class ResNet():
             input, num_filters, stride, is_first, name=name + "_branch1", data_format=data_format)
         return fluid.layers.elementwise_add(x=short, y=conv1, act='relu')
 
+    def resnet(self, inputs, labels):
+        self.predict = self.net(inputs)
+        self.sum_cost = fluid.layers.sigmoid_cross_entropy_with_logits(self.predict, labels)
+        self.loss = fluid.layers.mean(self.sum_cost)
+        self.accuracy = fluid.layers.accuracy(input=self.predict, label=labels)
+        self.startup_program = fluid.default_startup_program()
+
 
 def ResNet18():
     model = ResNet(layers=18)

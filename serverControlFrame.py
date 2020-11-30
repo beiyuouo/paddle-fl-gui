@@ -4,9 +4,11 @@ from PyQt5 import QtGui
 import threading
 import yaml
 
-from model import Model
+from model import *
 from testFrame import TestFrame
 from utils.MyFLUtils import MFLScheduler
+
+import numpy as np
 
 
 class ServerControlFrame(QWidget):
@@ -37,9 +39,9 @@ class ServerControlFrame(QWidget):
             self.clientGroupList.append([cliLabel, cliProBar, cliProLabel, cliStateLabel])
 
         # self.serGroupList = []
-        serLabel = QLabel('server')
-        serProBar = QProgressBar()
-        serProLabel = QLabel('{} %'.format(0))
+        # serLabel = QLabel('server')
+        # serProBar = QProgressBar()
+        # serProLabel = QLabel('{} %'.format(0))
         # self.cgvBox.addWidget(serLabel)
         # self.cgvBox.addWidget(serProBar)
         # self.cgvBox.addWidget(serProLabel)
@@ -96,17 +98,24 @@ class ServerControlFrame(QWidget):
         from paddle_fl.paddle_fl.core.strategy.fl_distribute_transpiler import FLDistributeTranspiler
         from paddle_fl.paddle_fl.core.strategy.fl_strategy_base import FLStrategyFactory, FedAvgStrategy
 
-        inputs = [fluid.layers.data(
-            name=str(slot_id), shape=[5],
-            dtype="float32")
-            for slot_id in range(3)]
-        label = fluid.layers.data(
-            name="label",
-            shape=[1],
-            dtype='int64')
-
-        model = Model()
-        model.mlp(inputs, label)
+        if self.config['parameter']['model'] == 'resnet':
+            model = ResNet18()
+            # inputs = np.array([np.zeros((3, 224, 224)).astype('float32')]).astype('float32')
+            inputs = fluid.layers.data(name='x', shape=[1, 3, 224, 224], dtype='float32')
+            labels = np.array([0]).astype('float32').reshape(-1, 1)
+            labels = fluid.layers.data(name='label', shape=[1, 1], dtype='float32')
+            model.resnet(inputs, labels)
+        else:
+            inputs = [fluid.layers.data(
+                name=str(slot_id), shape=[5],
+                dtype="float32")
+                for slot_id in range(3)]
+            label = fluid.layers.data(
+                name="label",
+                shape=[1],
+                dtype='int64')
+            model = Model()
+            model.mlp(inputs, label)
 
         job_generator = JobGenerator()
         optimizer = fluid.optimizer.SGD(learning_rate=0.1)

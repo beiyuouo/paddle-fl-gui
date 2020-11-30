@@ -8,7 +8,7 @@ import yaml
 
 from testFrame import TestFrame
 from utils.MyFLUtils import MFLTrainerFactory
-from utils.reader import reader
+from utils.reader import *
 
 import threading
 
@@ -119,11 +119,19 @@ class ClientFrame(QWidget):
         # self.lossThread = threading.Thread(target=self.update_loss_label)
         # self.lossThread.start()
         loss_list = np.array([])
+
+        if self.config['parameter']['model'] == 'resnet':
+            reader = data_loader(self.config['path']['data/data/'], batch_size=1)
+        else:
+            reader = mreader(self.id)
+
         while not self.trainer.stop():
             step_i += 1
             print("batch %d start train" % step_i)
             loss_list = np.concatenate((loss_list,
-                                        self.trainer.run_with_epoch(reader, [], int(self.config['parameter']['epochs']), self.id)))
+                                        self.trainer.run_with_epoch(reader, [],
+                                                                    int(self.config['parameter']['epochs']),
+                                                                    self.id)))
             plt.plot(range(0, len(loss_list)), loss_list)
             plt.legend(['train_loss'], loc='upper left')
             plt.savefig('loss_temp_{}.jpg'.format(self.id))

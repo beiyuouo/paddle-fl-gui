@@ -3,6 +3,7 @@ parameter:
   epochs: 3
   bs: 1
   round: 5
+  model: 'mlp'
 
 show:
   loss: True
@@ -11,6 +12,7 @@ show:
 path:
   output_path: 'fl_model/'
   job_path: 'fl_job_config/'
+  data_path: 'data/data/'
 
 test:
   thresholds: 0.2

@@ -95,6 +95,7 @@ class TestFrame(QWidget):
         self.reportBtn = QPushButton("generate report", self)
         self.reportBtn.resize(200, 30)
         self.reportBtn.move(350, 350)
+        self.reportBtn.clicked.connect(self.generate_report)
 
         self.setWindowTitle('TestFrame')
         self.show()
@@ -122,15 +123,60 @@ class TestFrame(QWidget):
 
         plot_bounding_box(labels, gradients, img0, self.resultPath)
 
+        self.model_output = output
+        self.model_labels = labels
+
         test_result = labels[0][0]
         test_prob = output[0][test_result]
 
-        jpg = QtGui.QPixmap(os.path.join(self.resultPath, '{}_with_bbox.jpg'.format(test_result))).scaled(self.resultpicLabel.width(), self.resultpicLabel.height())
+        jpg = QtGui.QPixmap(os.path.join(self.resultPath, '{}_with_bbox.jpg'.format(test_result))).scaled(
+            self.resultpicLabel.width(), self.resultpicLabel.height())
         self.resultpicLabel.setPixmap(jpg)
         # print(test_prob * 100)
         str = 'result: {},\nprobability: {:.2f}%'.format(test_dic[test_result], test_prob * 100)
         print(str)
         self.resultLabel.setText(str)
+
+    def generate_report(self):
+        import webbrowser
+        gen_html = os.path.join(self.resultPath, "report.html")
+        # 打开文件，准备写入
+        f = open(gen_html, 'w')
+
+        # 准备相关变量
+        str1 = 'my name is :'
+        str2 = '--MichaelAn--'
+
+        # 写入HTML界面中
+        message_f = """
+        <html>
+        <head></head>
+        <body style="text-align:center;margin-left:auto;margin-right:auto;">
+        """
+
+        message_m = ""
+        for i in range(len(self.model_labels)):
+            message_m += "<img src={} width='400' height='400'></img>\n".format('{}_with_bbox.jpg'.format(i))
+            message_m += "<br>\n"
+            message_m += "<p>\n"
+            message_m += 'label: {}, prop: {}\n'.format(test_dic[self.model_labels[i][0]], self.model_output[0][i])
+            message_m += "</p>\n"
+            message_m += "<br>\n"
+
+        message_b = """
+        </body>
+        </html>
+        """
+
+        message = message_f + message_m + message_b
+
+        # 写入文件
+        f.write(message)
+        # 关闭文件
+        f.close()
+
+        # 运行完自动在网页中显示
+        webbrowser.open(gen_html, new=1)
 
 
 if __name__ == '__main__':
