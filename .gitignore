@@ -28,4 +28,4 @@ fl_job_config/*
 data/*
 fl_model/*
 result_*/
-!docs/
+!/docs/
