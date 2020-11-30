@@ -1,8 +1,15 @@
 # paddle-fl-gui
 
----
-
 ## How to run
+
+### Env
+```
+redis paddleFL
+pip install -r requirements.txt
+```
+
+### Command
+
 ```shell script
 python serverFrame.py
 python clientFrame.py 0

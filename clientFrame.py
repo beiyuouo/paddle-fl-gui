@@ -123,7 +123,7 @@ class ClientFrame(QWidget):
         if self.config['parameter']['model'] == 'resnet':
             reader = data_loader(self.config['path']['data/data/'], batch_size=1)
         else:
-            reader = mreader(self.id)
+            reader = mreader
 
         while not self.trainer.stop():
             step_i += 1
