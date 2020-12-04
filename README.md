@@ -10,7 +10,10 @@ Fedrated Learning-Smart Medical Demo Video [<a href="https://www.bilibili.com/vi
 
 README [<a href="README.md">EN</a>|<a href="README_CN.md">CN</a>]
 
+Github Page: See <a href="https://beiyuouo.github.io/paddle-fl-gui/">Here</a>
+
 ## Description
+
 This is a simple GUI interface developed for operation by medical staff. Server parameters and client parameters can be configured in `config/config_server.yaml` and `config/config_client.yaml`
 
 - Server main interface
