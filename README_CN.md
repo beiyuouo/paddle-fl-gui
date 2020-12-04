@@ -5,45 +5,60 @@
 Welcome to star this repo.
 
 联邦学习-智慧医疗介绍视频 [<a href="https://www.bilibili.com/video/BV">Intro</a>]
+
 联邦学习-智慧医疗演示视频 [<a href="https://www.bilibili.com/video/BV">Demo</a>]
 
 README [<a href="README.md">EN</a>|<a href="README_CN.md">CN</a>]
+Github Page: See <a href="https://beiyuouo.github.io/paddle-fl-gui/">Here</a>
 
 ## Description
+
 这是为医护人员操作而开发的简易GUI界面，服务器参数和客户端参数可用在`config/config_server.yaml`和`config/config_client.yaml`中配置
 
 - 服务器主界面
+
 ![](imgs/serverFrame.png)
 
 - 服务器主控界面
+
 ![](imgs/serverControlFrame.png)
 
 - 服务器编译环境提示
+
 ![](imgs/compileEnv.png)
 
 - 服务器等待连接界面
+
 ![](imgs/serverGetConect.png)
 
 - 服务器训练界面
+
 ![](imgs/serverTrain.png)
 
 - 服务器训练完成界面
+
 ![](imgs/serverFinish.png)
 
 - 服务器训练完成提示
+
 ![](imgs/serverTrained.png)
 
 - 客户端界面
+
 ![](imgs/clientFrame.png)
 
 - 测试界面
+
 ![](imgs/testFrame.png)
 
 - 测试结果界面
+
 ![](imgs/testResult.png)
 
 - 报告生成网页
+
 ![](imgs/report.png)
+
 <a href="https://beiyuouo.github.io/paddle-fl-gui/report/report">Online Demo</a>
 
 
