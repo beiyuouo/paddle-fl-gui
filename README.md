@@ -1,64 +1,65 @@
 ## Hi 👋
 
-Come is come, don’t you star this project? & Forgive my pool English.
+来都来了，不点个小星星吗？
 
-Welcome to star this repo!
+Welcome to star this repo.
 
-Fedrated Learning-Smart Medical Introduction Video [<a href="https://www.bilibili.com/video/BV">Intro</a>]
+联邦学习-智慧医疗介绍视频 [<a href="https://www.bilibili.com/video/BV1Da4y1W7K3">Intro</a>]
 
-Fedrated Learning-Smart Medical Demo Video [<a href="https://www.bilibili.com/video/BV">Demo</a>]
+联邦学习-智慧医疗演示视频 [<a href="https://www.bilibili.com/video/BV">Demo</a>]
 
-README [<a href="README.md">EN</a>|<a href="README_CN.md">CN</a>]
+README [<a href="README_EN.md">EN</a>|<a href="README.md">CN</a>]
 
 Github Page: See <a href="https://beiyuouo.github.io/paddle-fl-gui/">Here</a>
 
 ## Description
 
-This is a simple GUI interface developed for operation by medical staff. Server parameters and client parameters can be configured in `config/config_server.yaml` and `config/config_client.yaml`
+这是为医护人员操作而开发的简易GUI界面，服务器参数和客户端参数可用在`config/config_server.yaml`和`config/config_client.yaml`中配置
 
-- Server main interface
+- 服务器主界面
 
 ![](imgs/serverFrame.png)
 
-- Server main control interface
+- 服务器主控界面
 
 ![](imgs/serverControlFrame.png)
 
-- Server compilation environment prompt
+- 服务器编译环境提示
 
 ![](imgs/compileEnv.png)
 
-- Server waiting for connection interface
+- 服务器等待连接界面
 
 ![](imgs/serverGetConect.png)
 
-- Server training interface
+- 服务器训练界面
 
 ![](imgs/serverTrain.png)
 
-- Server training completion interface
+- 服务器训练完成界面
 
 ![](imgs/serverFinish.png)
 
-- Server training completion prompt
+- 服务器训练完成提示
 
 ![](imgs/serverTrained.png)
 
-- Client interface
+- 客户端界面
 
 ![](imgs/clientFrame.png)
 
-- Test interface
+- 测试界面
 
 ![](imgs/testFrame.png)
 
-- Test result interface
+- 测试结果界面
 
 ![](imgs/testResult.png)
 
-- Report generation page
+- 报告生成网页
 
 ![](imgs/report.png)
+
 <a href="https://beiyuouo.github.io/paddle-fl-gui/report/report">Online Demo</a>
 
 
@@ -66,7 +67,7 @@ This is a simple GUI interface developed for operation by medical staff. Server 
 
 ### Installation
 
-- Install <a href="https://paddlefl.bj.bcebos.com/redis-stable.tar">Redis</a> & <a href="https://github.com/PaddlePaddle/PaddleFL"> PaddleFL</a>
+- Install <a href="https://paddlefl.bj.bcebos.com/redis-stable.tar">Redis</a> & <a href="https://github.com/PaddlePaddle/PaddleFL">PaddleFL</a>
 - Install requirements `pip install -r requirements.txt`
 
 
@@ -83,4 +84,9 @@ python clientFrame.py 2
 ## Change log
 
 ### v1.0(2020.11.30)
-The demo open source.
+初代Demo开源
+
+
+
+
+
