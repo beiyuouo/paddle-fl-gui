@@ -1,20 +1,60 @@
 
         <html>
-        <head></head>
-        <body align='center'>
-        <img src=0_with_bbox.jpg></img>
+<title>CT检查报告单</title>
+<head>
+    <style type="text/css">
+        td {
+            width: 25%;
+        }
+    </style>
+</head>
+<body style="text-align: center; width: 50% margin: 0 auto;">
+<div style="font-size: 30px"><p style="margin: 0 auto;">海 南 省 X X 医 院</p></div>
+<div style="font-size: 25px;">
+    <p style="margin: 0 auto;">C T 检 查 报 告 单</p>
+    <p style="font-size: 10px; margin: 0 auto;"> CT号: 20201229xxxxxxxx</p>
+</div>
+<hr style="height: 3px; width: 50%; border: none; border-top: 3px solid #555555; margin: 5 auto 0;" />
+<hr style="height: 3px; width: 50%; border: none; border-top: 1px solid #555555; margin: 0 auto;" />
+<table style="border: 0; text-align: center; margin: 0 auto;">
+  <tr>
+    <td>姓名：小阿昆</td>
+    <td>性别：不告诉你</td>
+    <td>年龄：20</td>
+    <td>摄片日期：2020-12-30</td>
+  </tr>
+  <tr>
+    <td>科别：心胸外科</td>
+    <td>床号：</td>
+    <td>住院号：</td>
+    <td>报告日期：2020-12-30</td>
+  </tr>
+</table>
+<hr style="height: 3px; width: 50%; border: none; border-top: 1px solid #555555; margin: 10 auto 0;" />
+<div style="text-align: left; margin-left: 30%;">
+    <p><b>检验项目：</b>胸腔</p>
+    <p><b>扫描方式：</b> 平扫、三维重组</p>
+    <p><b>影像表现：</b></p>
+        <img src=0_with_bbox.jpg width='400' height='400'></img>
 <br>
-<p>
-label: pneumonia, prop: 0.704407811164856
-</p>
+<p>该处可能存在普通肺炎病症，置信度：70.44%</p><br>
+<img src=1_with_bbox.jpg width='400' height='400'></img>
 <br>
-<img src=1_with_bbox.jpg></img>
-<br>
-<p>
-label: COVID-19, prop: 5.950535341980867e-05
-</p>
-<br>
+<p>该处可能存在新冠肺炎COVID-19病症，置信度：0.01%</p><br>
 
-        </body>
-        </html>
+</div>
+<hr style="height: 3px; width: 50%; border: none; border-top: 1px solid #555555; margin: 0 auto;" />
+<table style="border: 0; text-align: center; margin: 0 auto;">
+  <tr>
+    <td style="width: 15%;">报告医生：</td>
+    <td style="width: 15%;">审核医生：</td>
+  </tr>
+</table>
+<p>*注：本报告仅供临床医师参考，不做他用，影像科医生签字后有效。</p>
+<hr style="height: 3px; width: 50%; border: none; border-top: 1px solid #555555; margin: 0 auto;" />
+<hr style="height: 3px; width: 50%; border: none; border-top: 3px solid #555555; margin: 5 auto 0;" />
+
+
+</body>
+</html>
         
