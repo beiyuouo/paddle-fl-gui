@@ -23,7 +23,7 @@ last_layer_name = 'x2paddle_188.tmp_0'
 model_path = 'utils/models/resnet18/model_with_code'
 test_result = 0
 test_prob = 0
-test_dic = {0: 'pneumonia', 1: 'normal', 2: 'COVID-19'}
+test_dic = {0: '普通肺炎', 1: '正常', 2: '新冠肺炎COVID-19'}
 
 
 def paddle_model(data):
@@ -150,22 +150,68 @@ class TestFrame(QWidget):
         # 写入HTML界面中
         message_f = """
         <html>
-        <head></head>
-        <body style="text-align:center;margin-left:auto;margin-right:auto;">
+<title>CT检查报告单</title>
+<head>
+    <style type="text/css">
+        td {
+            width: 25%;
+        }
+    </style>
+</head>
+<body style="text-align: center; width: 50% margin: 0 auto;">
+<div style="font-size: 30px"><p style="margin: 0 auto;">海 南 省 X X 医 院</p></div>
+<div style="font-size: 25px;">
+    <p style="margin: 0 auto;">C T 检 查 报 告 单</p>
+    <p style="font-size: 10px; margin: 0 auto;"> CT号: 20201229xxxxxxxx</p>
+</div>
+<hr style="height: 3px; width: 50%; border: none; border-top: 3px solid #555555; margin: 5 auto 0;" />
+<hr style="height: 3px; width: 50%; border: none; border-top: 1px solid #555555; margin: 0 auto;" />
+<table style="border: 0; text-align: center; margin: 0 auto;">
+  <tr>
+    <td>姓名：小阿昆</td>
+    <td>性别：不告诉你</td>
+    <td>年龄：20</td>
+    <td>摄片日期：2020-12-30</td>
+  </tr>
+  <tr>
+    <td>科别：心胸外科</td>
+    <td>床号：</td>
+    <td>住院号：</td>
+    <td>报告日期：2020-12-30</td>
+  </tr>
+</table>
+<hr style="height: 3px; width: 50%; border: none; border-top: 1px solid #555555; margin: 10 auto 0;" />
+<div style="text-align: left; margin-left: 30%;">
+    <p><b>检验项目：</b>胸腔</p>
+    <p><b>扫描方式：</b> 平扫、三维重组</p>
+    <p><b>影像表现：</b></p>
         """
 
         message_m = ""
         for i in range(len(self.model_labels)):
             message_m += "<img src={} width='400' height='400'></img>\n".format('{}_with_bbox.jpg'.format(i))
             message_m += "<br>\n"
-            message_m += "<p>\n"
-            message_m += 'label: {}, prop: {}\n'.format(test_dic[self.model_labels[i][0]], self.model_output[0][i])
-            message_m += "</p>\n"
+            message_m += "<p>"
+            message_m += '该处可能存在{}病症，置信度：{:.2f}%'.format(test_dic[self.model_labels[i][0]], self.model_output[0][i] * 100)
+            message_m += "</p>"
             message_m += "<br>\n"
 
         message_b = """
-        </body>
-        </html>
+</div>
+<hr style="height: 3px; width: 50%; border: none; border-top: 1px solid #555555; margin: 0 auto;" />
+<table style="border: 0; text-align: center; margin: 0 auto;">
+  <tr>
+    <td style="width: 15%;">报告医生：</td>
+    <td style="width: 15%;">审核医生：</td>
+  </tr>
+</table>
+<p>*注：本报告仅供临床医师参考，不做他用，影像科医生签字后有效。</p>
+<hr style="height: 3px; width: 50%; border: none; border-top: 1px solid #555555; margin: 0 auto;" />
+<hr style="height: 3px; width: 50%; border: none; border-top: 3px solid #555555; margin: 5 auto 0;" />
+
+
+</body>
+</html>
         """
 
         message = message_f + message_m + message_b
