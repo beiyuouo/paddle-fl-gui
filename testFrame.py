@@ -92,7 +92,7 @@ class TestFrame(QWidget):
         self.resultpicLabel.move(350, 100)
         self.resultLabel.move(350, 280)
 
-        self.reportBtn = QPushButton("generate report", self)
+        self.reportBtn = QPushButton("生成报告", self)
         self.reportBtn.resize(200, 30)
         self.reportBtn.move(350, 350)
         self.reportBtn.clicked.connect(self.generate_report)
