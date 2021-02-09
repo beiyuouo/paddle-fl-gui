@@ -1,0 +1,1421 @@
+QHeaderView::section{
+    background-color: rgb(180,180,255);
+    color: rgb(110,110,110);
+    padding-left: 4px;
+    border: 0px solid #585858;
+}
+
+QTableWidget::item:selected {
+    background-color: rgb(200, 200, 255);
+    color: rgb(110,110,170);
+}
+
+
+.QWidget#subgroup {
+    background: qlineargradient(x1:0, y1:0, x2:0, y2:1, stop:0 #50AEFF, stop:0.8 #409EFF);
+	border-radius:5px;
+    padding: 5px;
+}
+
+.QPushButton,
+.QToolButton {
+    background: qlineargradient(x1:0, y1:0, x2:0, y2:1, stop:0 #eeeeee, stop:0.8 #ffffff);
+    /*border: 1px solid #DCDFE6;*/
+    border-color: #DCDFE6;
+	border:2px solid gray;
+    color: #606266;
+    padding: 5px;
+    border-radius: 35px;
+    padding-left: 20px;
+    padding-right: 20px;
+    min-height: 15px;
+    /*border-radius: 5px;*/
+}
+
+.QPushButton:hover,
+.QToolButton:hover {
+    color: #409EFF;
+    border-color: #c6e2ff;
+    background-color: #ecf5ff;
+}
+
+.QPushButton:pressed,
+.QToolButton:pressed {
+    color: #3a8ee6;
+    border-color: #3a8ee6;
+    outline: 0;
+}
+
+.QToolButton::menu-indicator {
+    image: None;
+}
+
+/* btnPrimary2 */
+QToolButton#btnPrimary2,
+QPushButton#btnPrimary2 {
+    color: #FFF;
+    background-color: #409EFF;
+    border-color: #409EFF;
+	border-radius: 8px;
+	padding: 10px;
+}
+QToolButton#btnPrimary2:focus,
+QPushButton#btnPrimary2:hover {
+    background: #66b1ff;
+    border-color: #66b1ff;
+    color: #FFF;
+}
+QToolButton#btnPrimary2:pressed,
+QPushButton#btnPrimary2:pressed {
+    background: #3a8ee6;
+    border-color: #3a8ee6;
+    color: #FFF;
+}
+
+
+/* btnPrimary */
+QToolButton#btnPrimary,
+QPushButton#btnPrimary {
+    color: #FFF;
+    /*background: qlineargradient(x1:0, y1:0, x2:0, y2:1, stop:0 #f08EEE, stop:0.8 #409EFF);*/
+    background-color: #409EFF;
+    border-color: #409EFF;
+}
+QToolButton#btnPrimary:focus,
+QPushButton#btnPrimary:hover {
+    background: #66b1ff;
+    border-color: #66b1ff;
+    color: #FFF;
+}
+QToolButton#btnPrimary:pressed,
+QPushButton#btnPrimary:pressed {
+    background: #3a8ee6;
+    border-color: #3a8ee6;
+    color: #FFF;
+}
+
+/* btnSuccess */
+QToolButton#btnSuccess,
+QPushButton#btnSuccess {
+    color: #FFF;
+    background-color: #67C23A;
+    border-color: #67C23A;
+}
+QToolButton#btnSuccess:focus,
+QPushButton#btnSuccess:hover {
+    background: #85ce61;
+    border-color: #85ce61;
+    color: #FFF;
+}
+QToolButton#btnSuccess:pressed,
+QPushButton#btnSuccess:pressed {
+    background: #5daf34;
+    border-color: #5daf34;
+    color: #FFF
+}
+
+/* btnArrow */
+QToolButton#btnArrow,
+QPushButton#btnArrow {
+    color: #54F;
+    background-color: #67C23A;
+    border-color: #67C23A;
+    padding: 0px;
+	border-radius: 25px;
+}
+QToolButton#btnArrow:focus,
+QPushButton#btnArrow:hover {
+    background: #85ce61;
+    border-color: #85ce61;
+    color: #FFF;
+}
+QToolButton#btnArrow:pressed,
+QPushButton#btnArrow:pressed {
+    background: #5daf34;
+    border-color: #5daf34;
+    color: #FFF
+}
+
+/* btnSuccess2 */
+QToolButton#btnSuccess2,
+QPushButton#btnSuccess2 {
+    color: #FFF;
+    background-color: #67C23A;
+    border-color: #67C23A;
+	border-radius: 8px;
+	padding: 10px;
+}
+QToolButton#btnSuccess2:focus,
+QPushButton#btnSuccess2:hover {
+    background: #85ce61;
+    border-color: #85ce61;
+    color: #FFF;
+}
+QToolButton#btnSuccess2:pressed,
+QPushButton#btnSuccess2:pressed {
+    background: #5daf34;
+    border-color: #5daf34;
+    color: #FFF
+}
+
+/* btnSuccess3 */
+QToolButton#btnSuccess3,
+QPushButton#btnSuccess3 {
+    color: #FFF;
+    background-color: #67C23A;
+    border-color: #67C23A;
+	border-radius: 6px;
+}
+QToolButton#btnSuccess3:focus,
+QPushButton#btnSuccess3:hover {
+    background: #85ce61;
+    border-color: #85ce61;
+    color: #FFF;
+}
+QToolButton#btnSuccess3:pressed,
+QPushButton#btnSuccess3:pressed {
+    background: #5daf34;
+    border-color: #5daf34;
+    color: #FFF
+}
+
+/* btnInfo */
+QToolButton#btnInfo,
+QPushButton#btnInfo {
+    color: #FFF;
+    background-color: #909399;
+    border-color: #909399
+}
+QToolButton#btnInfo:focus,
+QPushButton#btnInfo:hover {
+    background: #a6a9ad;
+    border-color: #a6a9ad;
+    color: #FFF
+}
+QToolButton#btnInfo:pressed,
+QPushButton#btnInfo:pressed {
+    background: #82848a;
+    border-color: #82848a;
+    color: #FFF
+}
+
+
+/* btnWarning */
+QToolButton#btnWarning,
+QPushButton#btnWarning {
+    color: #FFF;
+    background-color: #E6A23C;
+    border-color: #E6A23C
+}
+QToolButton#btnWarning:focus,
+QPushButton#btnWarning:hover {
+    background: #ebb563;
+    border-color: #ebb563;
+    color: #FFF
+}
+QToolButton#btnWarning:pressed,
+QPushButton#btnWarning:pressed {
+    background: #cf9236;
+    border-color: #cf9236;
+    color: #FFF
+}
+
+/* btnDanger */
+QToolButton#btnDanger,
+QPushButton#btnDanger {
+    color: #FFF;
+    background-color: #F56C6C;
+    border-color: #F56C6C
+}
+QToolButton#btnDanger:focus,
+QPushButton#btnDanger:hover {
+    background: #f78989;
+    border-color: #f78989;
+    color: #FFF
+}
+QToolButton#btnDanger:pressed,
+QPushButton#btnDanger:pressed {
+    background: #dd6161;
+    border-color: #dd6161;
+    color: #FFF
+}
+
+
+/* btnDisabled */
+QToolButton#btnDisabled,
+QPushButton#btnDisabled {
+    color: #C0C4CC;
+    cursor: not-allowed;
+    background-image: none;
+    background-color: #FFF;
+    border-color: #EBEEF5
+}
+QToolButton#btnDisabled:focus,
+QPushButton#btnDisabled:hover {
+    color: #C0C4CC;
+    cursor: not-allowed;
+    background-image: none;
+    background-color: #FFF;
+    border-color: #EBEEF5
+}
+QToolButton#btnDisabled:pressed,
+QPushButton#btnDisabled:pressed {
+    color: #C0C4CC;
+    background-image: none;
+    background-color: #FFF;
+    border-color: #EBEEF5
+}
+
+
+/* btnLGPrimary */
+QToolButton#btnLGPrimary,
+QPushButton#btnLGPrimary {
+    color: #FFF;
+    background: qlineargradient(spread: pad, x1:0, y1:0, x2:1, y2:0,stop:0 rgba(82,160,253, 255),stop:0.5 rgba(0,226,250, 255), stop:1 rgba(0,226,250, 255));
+    border-color:rgba(0,226,250, 255)
+}
+QToolButton#btnLGPrimary:focus,
+QPushButton#btnLGPrimary:hover {
+    background: qlineargradient(spread: pad, x1:0, y1:0, x2:1, y2:0,stop:0 rgba(82,160,253, 255),stop:0.5 rgba(0,226,250, 255), stop:1 rgba(0,226,250, 255));
+    border-color:rgba(0,226,250, 255);
+    color: #FFF
+}
+QToolButton#btnLGPrimary:pressed,
+QPushButton#btnLGPrimary:pressed {
+    background: qlineargradient(spread: pad, x1:0, y1:0, x2:1, y2:0,stop:0 rgba(82,160,253, 255),stop:0.5 rgba(0,226,250, 255), stop:1 rgba(0,226,250, 255));
+    border-color:rgba(0,226,250, 255);
+    color: #FFF
+}
+
+
+QProgressBar {
+	border: 0px solid grey;
+	border-radius: 5px;
+	text-align: center;
+}
+
+QProgressBar::chunk {
+	background-color: #88EBB0;
+	width: 20px;
+}
+
+/**
+*	@file:		list.h
+*	@details:	qt style sheet css example
+*	@author: 	chenwen(chenwen1126@tom.com)
+*	@datetime:  2017-7-25
+*	@history:   V1.0 first edition
+*/
+
+/*/////////////////////////////////////////////////QStatusBar///////////////////////////////////////////*/ 
+QStatusBar 
+{
+	border-top:1px solid #aaaaaa;
+	min-height:20px;
+	background: qlineargradient(x1:0, y1:0, x2:0, y2:1, stop:0.2 #f4f4f4, stop:1 #e4e4e4);/*渐变背景色*/
+}
+
+/*/////////////////////////////////////////////////工具栏及窗口边框///////////////////////////////////////////*/ 
+/*窗口边框，可*/
+QFrame#window
+{
+	padding:0px;
+	border-width:2px;/*边框宽度*/
+	border-style:solid;/*边框类型*/
+	/*用渐变色可以营造光晕边框效果*/
+	border-color:qlineargradient(x1:0, y1:1, x2:0, y2:0, stop:0 #999999, stop:1 #ffffff)/*上边框渐变色*/
+	  qlineargradient(x1:0, y1:0, x2:1, y2:0, stop:0 #999999, stop:1 #ffffff)/*右边框渐变色*/
+	  qlineargradient(x1:0, y1:0, x2:0, y2:1, stop:0 #999999, stop:1 #ffffff)/*下边框渐变色*/
+	  qlineargradient(x1:1, y1:0, x2:0, y2:0, stop:0 #999999, stop:1 #ffffff);/*左边框渐变色*/
+}
+
+QFrame#dialog,QFrame#messagebox
+{
+	padding:12px;/*设置透明阴影留出的padding空间，通过源码绘制透明阴影 注意在代码中设置QSSDIALOG_SHADOW_WIDTH为12*/
+	border:0px solid #ff0000;/*指定边框为0，实际边框时绘制阴影时直接画de直线，边框颜色也是在代码中指定的*/
+}
+
+/*标题栏*/
+QWidget#titlebar
+{
+	min-height:25px;/*用min-height设置标题栏高度*/
+	background: qlineargradient(x1:0, y1:0, x2:0, y2:1, stop:0.2 #e4e4e4, stop:1 #d4d4d4);/*渐变背景色*/
+	border-bottom:1px solid #aaaaaa;
+}
+
+QWidget:active#titlebar
+{
+	min-height:25px;/*用min-height设置标题栏高度*/
+	
+	background: qlineargradient(x1:0, y1:0, x2:0, y2:1, stop:0.2 #f4f4f4, stop:1 #e4e4e4);/*渐变背景色*/
+	border-bottom:1px solid #aaaaaa;
+}
+
+/*为QCommandLinkButton设置通用属性*/
+QCommandLinkButton
+{
+	border: none;/*边框*/
+	background: none;
+}
+
+/*/////////////////////////////////////////////////QCheckBox///////////////////////////////////////////*/
+/*QCheckBox的公用属性设置*/
+QCheckBox
+{
+	spacing:5px;/*指示器与文字之间的距离*/
+	outline:none;/*表示foucs状态时取消虚线框*/
+}
+
+/*QCheckBox指示器subcontrol属性设置*/
+QCheckBox::indicator
+{
+	width:15px;/*设置固定宽度，width height设置的宽高为content区宽高*/
+	height:15px;/*设置固定高度*/
+}
+
+/*QCheckBox指示器选中时属性设置*/
+QCheckBox::indicator:checked
+{
+	image:url(:/qss/icon/checkbox_p.png);/*图片*/
+}
+
+/*QCheckBox指示器未选中时属性设置*/
+QCheckBox::indicator:unchecked
+{
+	image:url(:/qss/icon/checkbox.png);/*图片*/
+}
+
+/*QCheckBox指示器未选中时且hover时属性设置*/
+QCheckBox::indicator:unchecked:hover
+{
+	image:url(:/qss/icon/checkbox_h.png);/*图片*/
+		
+}
+
+/*/////////////////////////////////////////////////QRadioButton///////////////////////////////////////////*/
+/*QRadioButton公用属性设置*/
+QRadioButton
+{
+	spacing:5px;/*指示器与文字之间的距离*/
+	outline:none;/*表示foucs状态时取消虚线框*/
+}
+
+/*QRadioButton指示器选中时属性设置*/
+QRadioButton::indicator
+{
+	width:15px;/*设置固定宽度，width height设置的宽高为content区宽高*/
+	height:15px;/*设置固定宽度*/
+}
+
+/*/////////////////////////////////////////////////QLineEdit///////////////////////////////////////////*/
+/*QLineEdit公用属性设置*/
+QLineEdit 
+{
+ 	padding:1px;
+ 	padding-left:4px;
+    border: 1px solid #aaaaaa;
+    background: white;
+    selection-background-color: #3399ff;
+}
+
+
+/*QLineEdit获得焦点时的属性设置，主要为光晕边框
+这里带了.，所以该属性仅对QLineEdit直接类对象生效，这样做的目的在于，可编辑QTableWidget编辑item时的编辑框不带边框*/
+.QLineEdit:focus1
+{
+  	padding:0px;/*padding，这里边框为2px为了不引起content尺寸变化padding设置为0*/
+    padding-left:3px;
+    border-width:2px;/*边框宽度*/
+	border-style:solid;/*边框类型*/
+	/*用渐变色可以营造光晕边框效果*/
+	border-color:qlineargradient(x1:0, y1:1, x2:0, y2:0, stop:0 #f9b158, stop:1 #ffe189)/*上边框渐变色*/
+	  qlineargradient(x1:0, y1:0, x2:1, y2:0, stop:0 #f9b158, stop:1 #ffe189)/*右边框渐变色*/
+	  qlineargradient(x1:0, y1:0, x2:0, y2:1, stop:0 #f9b158, stop:1 #ffe189)/*下边框渐变色*/
+	  qlineargradient(x1:1, y1:0, x2:0, y2:0, stop:0 #f9b158, stop:1 #ffe189);/*左边框渐变色*/
+}
+
+QLineEdit:read-only
+{
+    color: #787878;
+}
+
+/*/////////////////////////////////////////////////QPlainTextEdit///////////////////////////////////////////*/
+QPlainTextEdit
+{
+	padding:0px;
+    border: 1px solid #aaaaaa;
+    background: white;
+    selection-background-color: #3399ff;
+}
+
+QPlainTextEdit:read-only 
+{
+    color: #787878;
+}
+
+/*/////////////////////////////////////////////////QTextEdit///////////////////////////////////////////*/
+QTextEdit
+{
+	padding:0px;
+    border: 1px solid #aaaaaa;
+    background: white;
+    selection-background-color: #3399ff;
+}
+ 
+
+/*/////////////////////////////////////////////////QComboBox///////////////////////////////////////////*/ 
+/*QComboBox设置公用属性*/
+QComboBox
+{
+ 	border: 1px solid #aaaaaa;/*边框*/
+ 	padding:2px 18px 2px 3px;/*内边距，有偏移18px为drop-down按钮留出空间，所以subcontrol-origin属性须设为padding*/
+ 	min-width:36px;/*最小宽度为6em em和px一样为长度单位。em表示对应字体M的宽度。M为大写字母的最大宽度*/
+}
+
+/*QLineEdit获得焦点时的属性设置，设置边框为光晕边框*/
+QComboBox:focus1
+{
+  	padding:1px 17px 1px 2px;/*padding，这里边框为2px为了不引起content尺寸变化padding均减1*/
+    border-width:2px;
+	border-style:solid;
+	border-color:qlineargradient(x1:0, y1:1, x2:0, y2:0, stop:0 #64bff0, stop:1 #bae3f7)/*上边框渐变色*/
+	  qlineargradient(x1:0, y1:0, x2:1, y2:0, stop:0 #64bff0, stop:1 #bae3f7)/*右边框渐变色*/
+	  qlineargradient(x1:0, y1:0, x2:0, y2:1, stop:0 #64bff0, stop:1 #bae3f7)/*下边框渐变色*/
+	  qlineargradient(x1:1, y1:0, x2:0, y2:0, stop:0 #64bff0, stop:1 #bae3f7);/*左边框渐变色*/
+}
+
+/*设置drop-down按钮上的箭头图片*/
+QComboBox::down-arrow 
+{
+    image:url(:/qss/icon/downarrow.png);
+}
+
+/*设置drop-down按钮属性，自定义combox的重头戏。必须设置*/
+QComboBox::drop-down {
+    width:15px;/*drop-down按钮宽度*/
+    background: qlineargradient(x1:0, y1:0, x2:0, y2:1, stop:0 #ffffff, stop:0.8 #eeeeee);/*drop-down按钮渐变背景色*/
+	subcontrol-origin: padding;/*drop-down按钮绘制位置依据父控件设置的padding决定*/
+    subcontrol-position: right top;/*drop-down按钮相对父控件位置*/
+    border-left:1px solid #aaaaaa;/*drop-down左边框*/
+}
+
+/*设置QComboBox的：下拉时的视图属性。注意这不是设置的视图项，而是视图项主城的视图
+子孙窗口部件，用空格隔开。*/
+QComboBox QAbstractItemView 
+{
+     border: 1px solid #aaaaaa;/*边框*/
+     selection-background-color: #73c5f1;/*选中背景*/
+     outline:none;/*去掉选中时的虚线框*/
+}
+
+/*/////////////////////////////////////////////////QGroupBox///////////////////////////////////////////*/ 
+/*QGroupBox公用属性设置*/
+ QGroupBox {
+     background: none;/*背景透明*/
+     border: 1px solid #aaaaaa;/*边框*/
+     border-radius: 5px;/*边框圆角*/
+     margin-top: 2ex; /* 为title绘制留出空间，以下title子控制器的subcontrol-origin设置为margin */
+ }
+
+/*QGroupBox title子控制器属性设置*/
+QGroupBox::title 
+{
+	color:#3399ff;/*文本颜色*/
+ 	left:10px;/*子控制器相对于父控件的精确定位*/
+    subcontrol-origin: margin;/*子控制器绘制起始区域*/
+    subcontrol-position: top left; /*子控制器于父控件的相对位置*/
+    padding: 0px 2px;/*title文字左右padding设置使边框线条与title文字有间隔距离*/
+    background: none;/*背景透明*/
+ }
+
+/*/////////////////////////////////////////////////QSlider///////////////////////////////////////////*/ 
+/*QSlider水平凹槽属性设置，未设置背景因为它反正会被add-page subControl覆盖*/
+QSlider::groove:horizontal 
+{
+    border: 1px solid #aaaaaa;/*边框*/
+    height: 6px; /*水平凹槽高度*/
+}
+
+/*QSlider水平滑块属性设置*/
+QSlider::handle:horizontal 
+{
+    background: qlineargradient(x1:0, y1:0, x2:0, y2:1, stop:1 #666666, stop:0.5 #dddddd);/*渐变背景*/
+    border: 1px solid #5c5c5c;/*边框*/
+    width: 6px;/*滑块宽度*/
+    margin: -6px 0;/*通过设置margin上下margin为-6px，使得滑块高度比凹槽高度高12px。*/
+    border-radius: 4px;/*圆角边框*/
+ }
+
+/*通过add-page subControl设置未划过部分的背景*/
+QSlider::add-page:horizontal 
+{
+    border: 1px solid #aaaaaa;
+    background: white;/*qlineargradient(x1:0, y1:0, x2:1, y2:1, stop:0 #eeeeee, stop:1 #ffffff);*/
+}
+
+/*通过sub-page subControl设置划过部分的背景*/
+QSlider::sub-page:horizontal 
+{
+	border: 1px solid #aaaaaa;
+    background: qlineargradient(x1:0, y1:0, x2:1, y2:0, stop:0 #73c5f1, stop:0.6 #bde4f8, stop:1 #73c5f1); 
+}
+ 
+/*垂直滑动条：大同小异*/
+QSlider::groove:vertical 
+{
+   border: 1px solid #aaaaaa;
+   width: 6px; 
+}
+
+QSlider::handle:vertical 
+{
+    background: qlineargradient(x1:0, y1:0, x2:0, y2:1, stop:1 #666666, stop:0.4 #dddddd);/*渐变背景*/
+    border: 1px solid #5c5c5c;
+    height: 6px;
+    margin: 0px -6px;
+    border-radius: 4px;
+}
+ 
+QSlider::add-page:vertical 
+{
+	border: 1px solid #aaaaaa;
+	background: qlineargradient(x1:0, y1:0, x2:0, y2:1, stop:0 #73c5f1, stop:0.6 #bde4f8, stop:1 #73c5f1); 
+}
+
+QSlider::sub-page:vertical 
+{
+	border: 1px solid #aaaaaa;
+	background: white;/*qlineargradient(x1:0, y1:0, x2:1, y2:1, stop:0 #eeeeee, stop:1 #ffffff);*/
+}
+
+
+/*/////////////////////////////////////////////////QScrollBar///////////////////////////////////////////*/ 
+/*水平滚动条公用属性设置*/
+QScrollBar:horizontal
+{
+    border-top: 1px solid #aaaaaa;/*边框*/
+    /*background: qlineargradient(x1:0, y1:0, x2:0, y2:1, stop:0 #eeeeee, stop:0.8 #ffffff);渐变背景，也是滑轨背景*/
+    background:white;
+    height: 16px;/*水平滚动条高度*/
+    margin: 0px 16px 0 16px;/*水平滚动条margin，左右留出空间给add-line按钮和sub-line按钮*/
+}
+
+/*水平滚动条滑块公用属性设置*/
+QScrollBar::handle:horizontal 
+{
+    /*background: qlineargradient(x1:0, y1:0, x2:0, y2:1, stop:0 #73c5f1, stop:0.6 #bde4f8, stop:1 #73c5f1);背景*/
+    background: qlineargradient(x1:0, y1:0, x2:0, y2:1, stop:0 #ffffff, stop:0.8 #eeeeee);/*渐变背景色*/
+    min-width: 20px;/*最小宽度，滑块宽度自动调整但须设置一个最小宽度*/
+    border-radius: 0px;/**/
+    border-left:1px solid #aaaaaa;
+    border-right:1px solid #aaaaaa;
+}
+
+/*水平滚动条滑块被掠过时*/
+QScrollBar::handle:horizontal:hover
+{
+    /*background: qlineargradient(x1:0, y1:0, x2:0, y2:1, stop:0 #90d9fe, stop:0.6 #e2f3fc, stop:1 #90d9fe);渐变背景*/
+    background: qlineargradient(x1:0, y1:0, x2:0, y2:1, stop:0.2 #eeeeee, stop:1 #ffffff);/*渐变背景色*/
+}
+
+/*水平滚动条滑块被按压时*/
+QScrollBar::handle:horizontal:pressed
+{
+    /*background: qlineargradient(x1:0, y1:0, x2:0, y2:1,  stop:0 #60c8fd, stop:0.6 #bde4f8, stop:1 #60c8fd);渐变背景*/
+   background: qlineargradient(x1:0, y1:0, x2:0, y2:1, stop:0 #ffffff, stop:0.8 #eeeeee);/*渐变背景色*/
+}
+
+/*水平滚动条sub-line（增加一行）按钮*/
+QScrollBar::add-line:horizontal 
+{
+    border-top: 1px solid #aaaaaa;/*边框*/
+    border-left: 1px solid #aaaaaa;/*边框*/
+    border-right: 1px solid #aaaaaa;/*边框*/
+    background: qlineargradient(x1:0, y1:0, x2:0, y2:1, stop:0 #ffffff, stop:0.8 #eeeeee);/*渐变背景*/
+    width: 16px;/*宽度，跟父控件margin匹配*/
+    subcontrol-position: right;/*sub-line按钮相对于父控件位置设置*/
+    subcontrol-origin: margin;/*sub-line按钮绘制空间，之前父控件设置了margin为sub-line留出了控件*/
+}
+ 
+/*水平滚动条add-line（增加一行）按钮被掠过时*/
+QScrollBar::add-line:horizontal:hover
+{
+    background: qlineargradient(x1:0, y1:0, x2:0, y2:1, stop:0.4 #ffffff, stop:1 #eeeeee);/*渐变背景*/
+}
+ 
+/*水平滚动条add-line（增加一行）按钮被按压时*/
+QScrollBar::add-line:horizontal:pressed
+{
+    background: qlineargradient(x1:0, y1:0, x2:0, y2:1, stop:0 #ffffff, stop:0.4 #eeeeee);/*渐变背景*/
+}
+
+/*水平滚动条sub-line（减少一行）按钮*/
+QScrollBar::sub-line:horizontal 
+{
+    border-top: 1px solid #aaaaaa;/*边框*/
+    border-right: 1px solid #aaaaaa;/*边框*/
+    background: qlineargradient(x1:0, y1:0, x2:0, y2:1, stop:0 #ffffff, stop:0.8 #eeeeee);/*渐变背景*/
+    width: 16px;/*宽度，跟父控件margin匹配*/
+    subcontrol-position: left;/*sub-line按钮相对于父控件位置设置*/
+    subcontrol-origin: margin;/*sub-line按钮绘制空间，之前父控件设置了margin为sub-line留出了控件*/
+}
+
+/*水平滚动条sub-line（减少一行）按钮hover时*/
+QScrollBar::sub-line:horizontal:hover
+{
+    background: qlineargradient(x1:0, y1:0, x2:0, y2:1, stop:0.4 #ffffff, stop:1 #eeeeee);/*渐变背景*/
+}
+
+/*水平滚动条sub-line（减少一行）按钮被按压时*/
+QScrollBar::sub-line:horizontal:pressed
+{
+    background: qlineargradient(x1:0, y1:0, x2:0, y2:1, stop:0 #ffffff, stop:0.4 #eeeeee);/*渐变背景*/
+}
+
+/*水平滚动条左箭头设置图像（在add-line中居中显示）*/
+QScrollBar:left-arrow:horizontal
+{
+    image:url(:/qss/icon/hor_scroll_left_arrow.png);/*箭头图像*/
+}
+
+/*水平滚动条右箭头设置图像（在sub-line中居中显示）*/
+QScrollBar::right-arrow:horizontal 
+{
+	image:url(:/qss/icon/hor_scroll_right_arrow.png);/*箭头图像*/
+}
+
+/*水平滚动条add-page,sub-page指单击滑轨时滚动一页。可以为add-page,sub-page设置hover,pressed的背景 */
+QScrollBar::add-page:horizontal, QScrollBar::sub-page:horizontal 
+{
+     background: none;/*不设置add-page,sub-page背景*/
+}
+
+
+/*垂直滚动条，大同小异*/
+QScrollBar:vertical
+{
+    border-left: 1px solid #aaaaaa;
+    /*background: qlineargradient(x1:0, y1:0, x2:1, y2:0, stop:0 #eeeeee, stop:0.8 #ffffff);*/
+    background:white;
+    width: 16px;
+    margin: 16px 0px 16px 0px;
+}
+
+QScrollBar::handle:vertical 
+{
+    /*background: qlineargradient(x1:0, y1:0, x2:1, y2:0, stop:0 #73c5f1, stop:0.6 #bde4f8, stop:1 #73c5f1);渐变背景色*/
+    background: qlineargradient(x1:0, y1:0, x2:1, y2:0, stop:0 #ffffff, stop:0.8 #eeeeee);/*渐变背景色*/
+    min-height: 20px;
+    border-radius: 0px;
+    border-top:1px solid #aaaaaa;
+    border-bottom:1px solid #aaaaaa;
+}
+
+QScrollBar::handle:vertical:hover
+{
+    /*background: qlineargradient(x1:0, y1:0, x2:1, y2:0, stop:0 #90d9fe, stop:0.6 #e2f3fc, stop:1 #90d9fe);渐变背景*/
+    background: qlineargradient(x1:0, y1:0, x2:1, y2:0, stop:0.2 #eeeeee, stop:1 #ffffff);/*渐变背景色*/
+}
+
+QScrollBar::handle:vertical:pressed
+{
+    /*background: qlineargradient(x1:0, y1:0, x2:1, y2:0, stop:0 #60c8fd, stop:0.6 #bde4f8, stop:1 #60c8fd);渐变背景色*/
+    background: qlineargradient(x1:0, y1:0, x2:1, y2:0, stop:0 #ffffff, stop:0.8 #eeeeee);/*渐变背景色*/
+}
+ 
+QScrollBar::add-line:vertical 
+{
+    border-left: 1px solid #aaaaaa;
+    border-top: 1px solid #aaaaaa;
+    border-bottom: 1px solid #aaaaaa;
+    background: qlineargradient(x1:0, y1:0, x2:1, y2:0, stop:0 #ffffff, stop:0.8 #eeeeee);
+    height: 16px;
+    subcontrol-position: bottom;
+    subcontrol-origin: margin;
+}
+ 
+QScrollBar::add-line:vertical:hover
+{
+    background: qlineargradient(x1:0, y1:0, x2:1, y2:0, stop:0.4 #ffffff, stop:1 #eeeeee);
+}
+ 
+QScrollBar::add-line:vertical:pressed
+{
+    background: qlineargradient(x1:0, y1:0, x2:1, y2:0, stop:0 #ffffff, stop:0.4 #eeeeee);
+}
+
+QScrollBar::sub-line:vertical 
+{
+    border-left: 1px solid #aaaaaa;
+    border-bottom: 1px solid #aaaaaa;
+    background: qlineargradient(x1:0, y1:0, x2:1, y2:0, stop:0 #ffffff, stop:0.8 #eeeeee);
+    height: 16px;
+    subcontrol-position: top;
+    subcontrol-origin: margin;
+}
+ 
+QScrollBar::sub-line:vertical:hover
+{
+    background: qlineargradient(x1:0, y1:0, x2:1, y2:0, stop:0.4 #ffffff, stop:1 #eeeeee);
+}
+ 
+QScrollBar::sub-line:vertical:pressed
+{
+    background: qlineargradient(x1:0, y1:0, x2:1, y2:0, stop:0 #ffffff, stop:0.4 #eeeeee);
+}
+ 
+QScrollBar::down-arrow:vertical
+{
+    image:url(:/qss/icon/ver_scroll_bottom_arrow.png);
+}
+
+QScrollBar::up-arrow:vertical 
+{
+	image:url(:/qss/icon/ver_scroll_top_arrow.png);
+}
+
+QScrollBar::add-page:vertical, QScrollBar::sub-page:vertical 
+{
+	background: none;
+}
+
+/*
+一种更为简洁的滚动条
+QScrollBar:horizontal
+{
+    background: #f2f2f2;
+    height: 12px;
+}
+
+QScrollBar::handle:horizontal 
+{
+    background: #dddddd;
+    min-width: 20px;
+    border-radius: 6px;
+}
+
+QScrollBar::handle:horizontal:hover
+{
+    background: #d0d0d0;
+}
+
+QScrollBar::handle:horizontal:pressed
+{
+    background: #d0d0d0;
+}
+ 
+QScrollBar::add-line:horizontal, QScrollBar::sub-line:horizontal 
+{
+   background: none;
+}
+QScrollBar::add-page:horizontal, QScrollBar::sub-page:horizontal 
+{
+     background: none;
+}
+
+
+QScrollBar:vertical
+{
+    background: #f2f2f2;
+    width: 12px;
+}
+
+QScrollBar::handle:vertical 
+{
+    background: #dddddd;
+    min-height: 20px;
+    border-radius: 6px;
+}
+
+QScrollBar::handle:vertical:hover
+{
+    background: #d0d0d0;
+}
+
+QScrollBar::handle:vertical:pressed
+{
+    background: #d0d0d0;
+}
+ 
+QScrollBar::add-line:vertical, QScrollBar::sub-line:vertical 
+{
+   background: none;
+}
+QScrollBar::add-page:vertical, QScrollBar::sub-page:vertical 
+{
+     background: none;
+}
+
+*/
+
+/*/////////////////////////////////////////////////QTabWidget///////////////////////////////////////////*/ 
+/*QTabWidget由子控制器pane和tab-bar组成。pane为tab页所在区域，tab-bar为tab标签栏所在区域*/
+/*QTabWidget pane子控制器属性设置*/
+QTabWidget::pane 
+{
+    border: 0px solid #aaaaaa; /*tab有边框pane就不要边框了*/
+    margin-top:-1px;/*设置margin-top为-1是为了让tab-bar遮掉pane的上边框*/
+}
+
+/*QTabWidget tab-bar子控制器属性设置*/
+QTabWidget::tab-bar 
+{
+    left: 3px; /*left表示子控制器距父控件左边的距离定位*/
+}
+
+/*tab-bar子控制器（tab标签栏）又由tab标签组成，子控制器tab表示tab标签*/
+QTabBar::tab 
+{
+	background: qlineargradient(x1:0, y1:0, x2:0, y2:1, stop:0 #eeeeee, stop:0.8 #dddddd);/*渐变背景色*/
+	border-left: 1px solid #aaaaaa;/*边框，不设置标签底部边框*/
+	border-right: 1px solid #aaaaaa;/**/
+	border-top: 1px solid #aaaaaa;/**/
+	border-top-left-radius: 6px;/**/
+	border-top-right-radius: 6px;/**/
+	min-width: 18ex;/**/
+	padding: 4px;/**/
+}
+
+/*tab标签被选中或掠过时*/
+QTabBar::tab:selected, QTabBar::tab:hover 
+{
+    background: qlineargradient(x1:0, y1:0, x2:0, y2:1, stop:0 #ffffff, stop:0.8 #eeeeee);/*渐变背景色*/
+}
+
+/*tab标签被选中时*/
+QTabBar::tab:selected
+{
+	border-bottom: 3px solid #73c5f1;/*设置底部边框*/
+	margin-left: -4px;/*设置margin-top为-4px是为了扩大选中标签宽度，使得选中标签宽度大于未选中标签*/
+    margin-right: -4px;/**/
+}
+
+/*tab标签未被选中时*/
+QTabBar::tab:!selected 
+{
+	border-bottom: 1px solid #aaaaaa;/*设置底部边框*/
+    margin-top: 2px;/*设置margin-top为了压缩标签大小，使得未选中标签高度小于选中标签*/
+}
+
+/*第一个tab标签被选中时*/
+QTabBar::tab:first:selected 
+{
+    margin-left: 0px; /*左边不扩大宽度*/
+}
+
+/*最后一个tab标签被选中时*/
+QTabBar::tab:last:selected 
+{
+    margin-right: 0px;/*右边不扩大宽度*/
+}
+
+/*只有一个tab标签时*/
+QTabBar::tab:only-one 
+{
+    margin: 0px;/*不使用margin对标签大小作改变*/
+}
+
+/*QTabBar上标签过多时出现的左右箭头QToolButton按钮属性设置*/
+QTabBar QToolButton 
+{ 
+    border-radius: 6px;
+}
+
+/*QTabBar上标签过多时出现的左右箭头按钮箭头图片*/
+QTabBar QToolButton::right-arrow 
+{
+    image:url(:/qss/icon/hor_scroll_right_arrow.png);/*箭头图像*/
+}
+
+/*QTabBar上标签过多时出现的左右箭头按钮箭头图片*/
+QTabBar QToolButton::left-arrow 
+{
+    image:url(:/qss/icon/hor_scroll_left_arrow.png);/*箭头图像*/
+}
+
+
+/*/////////////////////////////////////////////////QCalendarWidget日历控件///////////////////////////////////////////*/ 
+QCalendarWidget QToolButton
+{
+	color:Black;
+}
+
+/*QCalendarWidget上左右箭头按钮箭头图片*/
+QCalendarWidget QToolButton::right-arrow 
+{
+    image:url(:/qss/icon/hor_scroll_right_arrow.png);/*箭头图像*/
+}
+
+/*QCalendarWidget上左右箭头按钮箭头图片*/
+QCalendarWidget QToolButton::left-arrow 
+{
+    image:url(:/qss/icon/hor_scroll_left_arrow.png);/*箭头图像*/
+}
+
+/*/////////////////////////////////////////////////QListView/QListWidget///////////////////////////////////////////*/
+/*QListView公用属性设置*/ 
+QListView
+{
+	border:1px solid #aaaaaa;/*边框*/
+	selection-background-color: #73c5f1;/*选中背景*/
+	alternate-background-color:#e9e9e9;/*交替行背景色，代码中设置了交替行背景设有效时生效*/
+    outline:none;/*去掉选中时的虚线框*/
+}
+
+QListView::item 
+{
+    min-height:24px;/*调整项高度*/
+    margin-left:40px;
+}
+
+/*由于QToolButton的属性对QToolBar上button属性的影响不知道怎么分离，
+所以QToolBar上按钮效果要完全自己定制，其实qt本身实现的XP系统上玻璃覆盖效果不错*/
+/*QToolBar上按钮属性设置*/
+QToolBar QToolButton
+{
+	margin-bottom:2px;/*调整按钮大小，防止QToolButton hover时遮住QToolBar自身边框*/
+	border: none;/*去掉边框*/
+	background:transparent;/*设置normal状态下背景色为透明色*/
+	border-radius: 4px;/*边框圆角*/
+}
+
+/*/////////////////////////////////////////////////QToolTip///////////////////////////////////////////*/ 
+/*QToolTip(提示条)公用属性设置*/   
+QToolTip 
+{
+	/*background:#f4f4f4;*/
+    border: 1px solid #aaaaaa;/*边框*/
+    padding: 1px;/*调整大小*/
+    border-radius: 0px;/*边框圆角*/
+    background:#fafafa;
+    opacity: 240;/*不透明度，255时不透明*/
+}
+
+/*/////////////////////////////////////////////////QSpinBox///////////////////////////////////////////*/ 
+QSpinBox
+{
+	min-height:20px;
+    padding-right: 15px; 
+    border: 1px solid #aaaaaa;/*边框*/
+ 	min-width:1em;/*最小宽度为6em em和px一样为长度单位。em表示对应字体M的宽度。M为大写字母的最大宽度*/
+     background:white;
+}
+
+QSpinBox::up-button 
+{
+    subcontrol-origin: padding;
+    subcontrol-position: top right; 
+	background: qlineargradient(x1:0, y1:0, x2:0, y2:1, stop:0 #ffffff, stop:0.8 #eeeeee);/*渐变背景色*/
+    width: 15px; 
+    border-left: 1px solid #aaaaaa;
+    border-bottom: 0px solid #aaaaaa;
+}
+
+QSpinBox::up-button:hover 
+{
+    background: qlineargradient(x1:0, y1:0, x2:0, y2:1, stop:0 #eeeeee, stop:0.8 #ffffff);/*渐变背景色*/
+}
+
+QSpinBox::up-button:pressed 
+{
+	background: qlineargradient(x1:0, y1:0, x2:0, y2:1, stop:0 #ffffff, stop:0.8 #dddddd);/*渐变背景色*/
+}
+
+QSpinBox::up-arrow 
+{
+	image:url(:/qss/icon/ver_scroll_top_arrow.png);
+    width: 9px;
+    height: 9px;
+}
+
+QSpinBox::up-arrow:disabled, QSpinBox::up-arrow:off 
+{ 
+	background: qlineargradient(x1:0, y1:0, x2:0, y2:1, stop:0 #ffffff, stop:0.6 #eeeeee);/*渐变背景色*/
+	border: 0px solid #dddddd;/*边框*/
+}
+
+QSpinBox::down-button 
+{
+    subcontrol-origin: padding;
+    subcontrol-position: bottom right; 
+	background: qlineargradient(x1:0, y1:1, x2:0, y2:0, stop:0 #ffffff, stop:0.8 #eeeeee);/*渐变背景色*/
+    width: 15px; 
+    border-left: 1px solid #aaaaaa;
+    border-top: 0px solid #aaaaaa;
+}
+
+QSpinBox::down-button:hover 
+{
+    background: qlineargradient(x1:0, y1:1, x2:0, y2:0, stop:0 #eeeeee, stop:0.8 #ffffff);/*渐变背景色*/
+}
+
+QSpinBox::down-button:pressed 
+{
+	background: qlineargradient(x1:0, y1:1, x2:0, y2:0, stop:0 #ffffff, stop:0.8 #dddddd);/*渐变背景色*/
+}
+
+QSpinBox::down-arrow 
+{
+    image:url(:/qss/icon/ver_scroll_bottom_arrow.png);
+    width: 9px;
+    height: 9px;
+}
+
+QSpinBox::down-arrow:disabled,
+QSpinBox::down-arrow:off 
+{ 
+	background: qlineargradient(x1:0, y1:1, x2:0, y2:0, stop:0 #ffffff, stop:0.6 #eeeeee);/*渐变背景色*/
+	border: 0px solid #dddddd;/*边框*/
+}
+ 
+ 
+/*/////////////////////////////////////////////////QDoubleSpinBox///////////////////////////////////////////*/ 
+QDoubleSpinBox
+{
+	min-height:20px;
+    padding-right: 15px; 
+    border: 1px solid #aaaaaa;/*边框*/
+ 	min-width:4em;/*最小宽度为6em em和px一样为长度单位。em表示对应字体M的宽度。M为大写字母的最大宽度*/
+}
+
+QDoubleSpinBox::up-button 
+{
+    subcontrol-origin: padding;
+    subcontrol-position: top right; /* position at the top right corner */
+	background: qlineargradient(x1:0, y1:0, x2:0, y2:1, stop:0 #ffffff, stop:0.8 #eeeeee);/*渐变背景色*/
+    width: 15px; 
+    border-left: 1px solid #aaaaaa;
+    border-bottom: 0px solid #aaaaaa;
+}
+
+QDoubleSpinBox::up-button:hover 
+{
+    background: qlineargradient(x1:0, y1:0, x2:0, y2:1, stop:0 #eeeeee, stop:0.8 #ffffff);/*渐变背景色*/
+}
+
+QDoubleSpinBox::up-button:pressed 
+{
+	background: qlineargradient(x1:0, y1:0, x2:0, y2:1, stop:0 #ffffff, stop:0.8 #dddddd);/*渐变背景色*/
+}
+
+QDoubleSpinBox::up-arrow 
+{
+	image:url(:/qss/icon/ver_scroll_top_arrow.png);
+    width: 9px;
+    height: 9px;
+}
+
+QDoubleSpinBox::up-arrow:disabled, 
+QSpinBox::up-arrow:off 
+{ 
+	background: qlineargradient(x1:0, y1:0, x2:0, y2:1, stop:0 #ffffff, stop:0.6 #eeeeee);/*渐变背景色*/
+	border: 1px solid #dddddd;/*边框*/
+}
+
+QDoubleSpinBox::down-button 
+{
+    subcontrol-origin: padding;
+    subcontrol-position: bottom right; 
+	background: qlineargradient(x1:0, y1:1, x2:0, y2:0, stop:0 #ffffff, stop:0.8 #eeeeee);/*渐变背景色*/
+    width: 15px; 
+    border-left: 1px solid #aaaaaa;
+    border-top: 0px solid #aaaaaa;
+}
+
+QDoubleSpinBox::down-button:hover 
+{
+    background: qlineargradient(x1:0, y1:1, x2:0, y2:0, stop:0 #eeeeee, stop:0.8 #ffffff);/*渐变背景色*/
+}
+
+QDoubleSpinBox::down-button:pressed 
+{
+	background: qlineargradient(x1:0, y1:1, x2:0, y2:0, stop:0 #ffffff, stop:0.8 #dddddd);/*渐变背景色*/
+}
+
+QDoubleSpinBox::down-arrow {
+    image:url(:/qss/icon/ver_scroll_bottom_arrow.png);
+    width: 9px;
+    height: 9px;
+}
+
+QDoubleSpinBox::down-arrow:disabled,
+QDoubleSpinBox::down-arrow:off 
+{ 
+	 background: qlineargradient(x1:0, y1:1, x2:0, y2:0, stop:0 #ffffff, stop:0.6 #eeeeee);/*渐变背景色*/
+	border: 1px solid #dddddd;/*边框*/
+}
+
+/*/////////////////////////////////////////////////QTimeEdit///////////////////////////////////////////*/ 
+QTimeEdit
+{
+	min-height:20px;
+    padding-right: 15px; 
+    border: 1px solid #aaaaaa;/*边框*/
+ 	min-width:8em;/*最小宽度为6em em和px一样为长度单位。em表示对应字体M的宽度。M为大写字母的最大宽度*/
+}
+
+QTimeEdit::up-button 
+{
+    subcontrol-origin: padding;
+    subcontrol-position: top right; /* position at the top right corner */
+	background: qlineargradient(x1:0, y1:0, x2:0, y2:1, stop:0 #ffffff, stop:0.8 #eeeeee);/*渐变背景色*/
+    width: 15px; 
+    border-left: 1px solid #aaaaaa;
+    border-bottom: 0px solid #aaaaaa;
+}
+
+QTimeEdit::up-button:hover 
+{
+    background: qlineargradient(x1:0, y1:0, x2:0, y2:1, stop:0 #eeeeee, stop:0.8 #ffffff);/*渐变背景色*/
+}
+
+QTimeEdit::up-button:pressed 
+{
+   background: qlineargradient(x1:0, y1:0, x2:0, y2:1, stop:0 #ffffff, stop:0.8 #dddddd);/*渐变背景色*/
+}
+
+QTimeEdit::up-arrow 
+{
+	image:url(:/qss/icon/ver_scroll_top_arrow.png);
+    width: 9px;
+    height: 9px;
+}
+
+QTimeEdit::up-arrow:disabled, 
+QTimeEdit::up-arrow:off 
+{ 
+	background: qlineargradient(x1:0, y1:0, x2:0, y2:1, stop:0 #ffffff, stop:0.6 #eeeeee);/*渐变背景色*/
+	border: 1px solid #dddddd;/*边框*/
+}
+
+QTimeEdit::down-button 
+{
+    subcontrol-origin: padding;
+    subcontrol-position: bottom right; 
+	background: qlineargradient(x1:0, y1:1, x2:0, y2:0, stop:0 #ffffff, stop:0.8 #eeeeee);/*渐变背景色*/
+    width: 15px; 
+    border-left: 1px solid #aaaaaa;
+    border-top: 0px solid #aaaaaa;
+}
+
+QTimeEdit::down-button:hover 
+{
+    background: qlineargradient(x1:0, y1:1, x2:0, y2:0, stop:0 #eeeeee, stop:0.8 #ffffff);/*渐变背景色*/
+}
+
+QTimeEdit::down-button:pressed 
+{
+	background: qlineargradient(x1:0, y1:1, x2:0, y2:0, stop:0 #ffffff, stop:0.8 #dddddd);/*渐变背景色*/
+}
+
+QTimeEdit::down-arrow 
+{
+    image:url(:/qss/icon/ver_scroll_bottom_arrow.png);
+    width: 9px;
+    height: 9px;
+}
+
+QTimeEdit::down-arrow:disabled,
+QTimeEdit::down-arrow:off 
+{ 
+	background: qlineargradient(x1:0, y1:1, x2:0, y2:0, stop:0 #ffffff, stop:0.6 #eeeeee);/*渐变背景色*/
+	border: 1px solid #dddddd;/*边框*/
+}
+
+
+/*/////////////////////////////////////////////////QDateEdit///////////////////////////////////////////*/ 
+QDateEdit
+{
+	min-height:20px;
+    padding-right: 15px; 
+    border: 1px solid #aaaaaa;/*边框*/
+ 	min-width:10em;/*最小宽度为6em em和px一样为长度单位。em表示对应字体M的宽度。M为大写字母的最大宽度*/
+}
+
+QDateEdit::up-button 
+{
+    subcontrol-origin: padding;
+    subcontrol-position: top right; /* position at the top right corner */
+	background: qlineargradient(x1:0, y1:0, x2:0, y2:1, stop:0 #ffffff, stop:0.8 #eeeeee);/*渐变背景色*/
+    width: 15px; 
+    border-left: 1px solid #aaaaaa;
+    border-bottom: 0px solid #aaaaaa;
+}
+
+QDateEdit::up-button:hover 
+{
+    background: qlineargradient(x1:0, y1:0, x2:0, y2:1, stop:0 #eeeeee, stop:0.8 #ffffff);/*渐变背景色*/
+}
+
+QDateEdit::up-button:pressed 
+{
+   background: qlineargradient(x1:0, y1:0, x2:0, y2:1, stop:0 #ffffff, stop:0.8 #dddddd);/*渐变背景色*/
+}
+
+QDateEdit::up-arrow 
+{
+	image:url(:/qss/icon/ver_scroll_top_arrow.png);
+    width: 9px;
+    height: 9px;
+}
+
+QDateEdit::up-arrow:disabled, 
+QDateEdit::up-arrow:off 
+{ 
+	background: qlineargradient(x1:0, y1:0, x2:0, y2:1, stop:0 #ffffff, stop:0.6 #eeeeee);/*渐变背景色*/
+	border: 1px solid #dddddd;/*边框*/
+}
+
+QDateEdit::down-button 
+{
+    subcontrol-origin: padding;
+    subcontrol-position: bottom right; 
+	background: qlineargradient(x1:0, y1:1, x2:0, y2:0, stop:0 #ffffff, stop:0.8 #eeeeee);/*渐变背景色*/
+    width: 15px; 
+    border-left: 1px solid #aaaaaa;
+    border-top: 0px solid #aaaaaa;
+}
+
+QDateEdit::down-button:hover 
+{
+    background: qlineargradient(x1:0, y1:1, x2:0, y2:0, stop:0 #eeeeee, stop:0.8 #ffffff);/*渐变背景色*/
+}
+
+QTimeEdit::down-button:pressed 
+{
+	background: qlineargradient(x1:0, y1:1, x2:0, y2:0, stop:0 #ffffff, stop:0.8 #dddddd);/*渐变背景色*/
+}
+
+QDateEdit::down-arrow 
+{
+    image:url(:/qss/icon/ver_scroll_bottom_arrow.png);
+    width: 9px;
+    height: 9px;
+}
+
+QDateEdit::down-arrow:disabled,
+QDateEdit::down-arrow:off 
+{ 
+	background: qlineargradient(x1:0, y1:1, x2:0, y2:0, stop:0 #ffffff, stop:0.6 #eeeeee);/*渐变背景色*/
+	border: 1px solid #dddddd;/*边框*/
+}
+
+/*/////////////////////////////////////////////////QDateTimeEdit///////////////////////////////////////////*/ 
+QDateTimeEdit
+{
+	min-height:20px;
+    padding-right: 15px; 
+    border: 1px solid #aaaaaa;/*边框*/
+    background:white;
+}
+
+QDateTimeEdit::up-button 
+{
+    subcontrol-origin: padding;
+    subcontrol-position: top right; /* position at the top right corner */
+	background: qlineargradient(x1:0, y1:0, x2:0, y2:1, stop:0 #ffffff, stop:0.8 #eeeeee);/*渐变背景色*/
+    width: 15px; 
+    border-left: 1px solid #aaaaaa;
+    border-bottom: 0px solid #aaaaaa;
+}
+
+QDateTimeEdit::up-button:hover 
+{
+    background: qlineargradient(x1:0, y1:0, x2:0, y2:1, stop:0 #eeeeee, stop:0.8 #ffffff);/*渐变背景色*/
+}
+
+QDateTimeEdit::up-button:pressed 
+{
+   background: qlineargradient(x1:0, y1:0, x2:0, y2:1, stop:0 #ffffff, stop:0.8 #dddddd);/*渐变背景色*/
+}
+
+QDateTimeEdit::up-arrow 
+{
+	image:url(:/qss/icon/ver_scroll_top_arrow.png);
+    width: 9px;
+    height: 9px;
+}
+
+QDateTimeEdit::up-arrow:disabled, 
+QDateTimeEdit::up-arrow:off 
+{ 
+	background: qlineargradient(x1:0, y1:0, x2:0, y2:1, stop:0 #ffffff, stop:0.6 #eeeeee);/*渐变背景色*/
+	border: 1px solid #dddddd;/*边框*/
+}
+
+QDateTimeEdit::down-button 
+{
+    subcontrol-origin: padding;
+    subcontrol-position: bottom right; 
+	background: qlineargradient(x1:0, y1:1, x2:0, y2:0, stop:0 #ffffff, stop:0.8 #eeeeee);/*渐变背景色*/
+    width: 15px; 
+    border-left: 1px solid #aaaaaa;
+    border-top: 0px solid #aaaaaa;
+}
+
+QDateTimeEdit::down-button:hover 
+{
+    background: qlineargradient(x1:0, y1:1, x2:0, y2:0, stop:0 #eeeeee, stop:0.8 #ffffff);/*渐变背景色*/
+}
+
+QDateTimeEdit::down-button:pressed 
+{
+	background: qlineargradient(x1:0, y1:1, x2:0, y2:0, stop:0 #ffffff, stop:0.8 #dddddd);/*渐变背景色*/
+}
+
+QDateTimeEdit::down-arrow 
+{
+    image:url(:/qss/icon/ver_scroll_bottom_arrow.png);
+    width: 9px;
+    height: 9px;
+}
+
+QDateTimeEdit::down-arrow:disabled,
+QDateTimeEdit::down-arrow:off 
+{ 
+	background: qlineargradient(x1:0, y1:1, x2:0, y2:0, stop:0 #ffffff, stop:0.6 #eeeeee);/*渐变背景色*/
+	border: 1px solid #dddddd;/*边框*/
+}
+
+/*/////////////////////////////////////////////////QGraphicsView///////////////////////////////////////////*/ 
+QGraphicsView
+{
+	border:none;
+}
+/*/////////////////////////////////////////////////QSizeGrip///////////////////////////////////////////*/ 
+QSizeGrip
+{
+	image: url(:/qss/icon/sizegrip.png);
+	width: 15px;
+	height: 15px;
+ }
+
+/*/////////////////////////////////////////////////QDockWidget///////////////////////////////////////////*/ 
+QDockWidget
+{
+    border: 1px solid #aaaaaa;
+    background: #f2f2f2;
+}
+
+QDockWidget::title {
+    text-align: left; /* align the text to the left */
+    background: #f0f0f0;
+    padding-left: 5px;
+    padding-right: 5px;
+    border-bottom:1 solid #aaaaaa;
+}
+
+QMainWindow::separator
+{
+    width:0px;
+    height:0px;
+    border-width: 1px;
+    border-color:#f2f2f2 #f2f2f2 #aaaaaa #aaaaaa ;
+    border-style:solid;
+}
+
+/*/////////////////////////////////////////////////QLCDNumber///////////////////////////////////////////*/ 
+QLCDNumber
+{
+    /*background:white;*/
+}

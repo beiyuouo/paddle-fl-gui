@@ -2,7 +2,6 @@ import sys
 from PyQt5.QtWidgets import *
 from PyQt5 import QtGui
 
-
 class Example(QWidget):
 
     def __init__(self):

@@ -18,6 +18,8 @@ __pycache__
 *.jpg
 *.JPG
 *.jpeg
+*.zip
+*.psd
 
 # notebook checkpoints
 .ipynb_checkpoints

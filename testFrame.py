@@ -3,7 +3,9 @@ import sys
 
 import yaml
 from PyQt5.QtWidgets import *
-from PyQt5 import QtGui
+from PyQt5.QtCore import *
+from PyQt5.QtGui import *
+from PyQt5 import QtGui, QtCore
 
 # import interpretdl as it
 
@@ -18,6 +20,8 @@ from utils.models.resnet18.model_with_code.model import x2paddle_net
 from datetime import datetime
 
 from utils.testInterpreter import MyGradCAMInterpreter, plot_bounding_box
+from style import FramelessWindow, CircleProgressBar, language
+import qtawesome as qta
 
 last_layer_name = 'x2paddle_188.tmp_0'
 model_path = 'utils/models/resnet18/model_with_code'
@@ -62,24 +66,63 @@ def paddle_model(data):
 
 
 class TestFrame(QWidget):
-    def __init__(self, config):
+    def __init__(self, config, lang='cn'):
         super().__init__()
         print('called')
+        self.lang = lang
+        self.loadQSS()
         self.initGUI()
         self.config = config
         self.modelPath = model_path
+        self.translateAll()
 
+    def clickedChinese(self):
+        self.lang = "cn"
+        self.translateAll()
+
+    def clickedEnglish(self):
+        self.lang = "en"
+        self.translateAll()
+
+    def translateAll(self):
+        self.choosepicLabel.setText(language[self.lang]['select image'])
+        self.choosepicBtn.setText(language[self.lang]['select image'])
+        self.resultLabel.setText(language[self.lang]['result'])
+        self.reportBtn.setText(language[self.lang]['generate'])
+        
+    def loadQSS(self):
+        """ 加载QSS """
+        file = 'qss/style/main.qss'
+        with open(file, 'rt', encoding='utf8') as f:
+            styleSheet = f.read()
+        self.setStyleSheet(styleSheet)
+        f.close()
+        
     def initGUI(self):
         self.resize(600, 400)
         self.choosepicLabel = QLabel("选择图片", self)
         self.choosepicLabel.resize(200, 200)
-        self.choosepicBtn = QPushButton("选择图片", self)
+ 
+        self.choosepicBtnIcon1 = qta.icon('fa.image', scale_factor = 1, color='white')
+        self.choosepicBtn = QPushButton(self.choosepicBtnIcon1, "选择图片", self, objectName='btnPrimary2')
+        effect_shadow = QGraphicsDropShadowEffect(self)
+        effect_shadow.setOffset(3,3) # 偏移
+        effect_shadow.setBlurRadius(10) # 阴影半径
+        effect_shadow.setColor(QColor(38, 78, 200, 127)) # 阴影颜色
+        self.choosepicBtn.setGraphicsEffect(effect_shadow)
         self.choosepicBtn.clicked.connect(self.openimage)
+        
 
-        self.processBtn = QPushButton("=>", self)
+        self.processBtn = QPushButton(chr(0xf061), self, objectName='btnArrow')
+        effect_shadow = QGraphicsDropShadowEffect(self)
+        effect_shadow.setOffset(3,3) # 偏移
+        effect_shadow.setBlurRadius(10) # 阴影半径
+        effect_shadow.setColor(QColor(38, 200, 78, 127)) # 阴影颜色
+        self.processBtn.setGraphicsEffect(effect_shadow)
+        self.processBtn.setFont(qta.font('fa', 20))
+        self.processBtn.resize(50, 50)
         self.imgPath = ''
         self.processBtn.clicked.connect(self.processGradCAM)
-        self.processBtn.resize(50, 30)
 
         self.resultpicLabel = QLabel("", self)
         self.resultpicLabel.resize(200, 200)
@@ -91,20 +134,31 @@ class TestFrame(QWidget):
         self.processBtn.move(275, 175)
         self.resultpicLabel.move(350, 100)
         self.resultLabel.move(350, 280)
-
-        self.reportBtn = QPushButton("生成报告", self)
+        
+        self.reportBtnIcon1 = qta.icon('fa.sign-out', scale_factor = 1, color='white')
+        self.reportBtn = QPushButton(self.reportBtnIcon1, "生成报告", self, objectName='btnSuccess2')
+        effect_shadow = QGraphicsDropShadowEffect(self)
+        effect_shadow.setOffset(3,3) # 偏移
+        effect_shadow.setBlurRadius(10) # 阴影半径
+        effect_shadow.setColor(QColor(38, 200, 78, 127)) # 阴影颜色
+        self.reportBtn.setGraphicsEffect(effect_shadow)
         self.reportBtn.resize(200, 30)
         self.reportBtn.move(350, 350)
         self.reportBtn.clicked.connect(self.generate_report)
 
         self.setWindowTitle('TestFrame')
-        self.show()
+        #self.show()
 
     def openimage(self):
         imgName, imgType = QFileDialog.getOpenFileName(self, "打开图片", "", "Image File(*.jpg *.png *.bmp)")
         self.picPath = imgName
         jpg = QtGui.QPixmap(imgName).scaled(self.choosepicLabel.width(), self.choosepicLabel.height())
         self.choosepicLabel.setPixmap(jpg)
+        effect_shadow = QGraphicsDropShadowEffect(self)
+        effect_shadow.setOffset(3,3) # 偏移
+        effect_shadow.setBlurRadius(10) # 阴影半径
+        effect_shadow.setColor(QColor(38, 78, 200, 127)) # 阴影颜色
+        self.choosepicLabel.setGraphicsEffect(effect_shadow)
 
     def processGradCAM(self):
         img_path = self.picPath
@@ -133,7 +187,7 @@ class TestFrame(QWidget):
             self.resultpicLabel.width(), self.resultpicLabel.height())
         self.resultpicLabel.setPixmap(jpg)
         # print(test_prob * 100)
-        str = 'result: {},\nprobability: {:.2f}%'.format(test_dic[test_result], test_prob * 100)
+        str = language[self.lang]['result'] + ': {},\n' + language[self.lang]['probability'] + ': {:.2f}%'.format(test_dic[test_result], test_prob * 100)
         print(str)
         self.resultLabel.setText(str)
 
@@ -229,4 +283,12 @@ if __name__ == '__main__':
     app = QApplication(sys.argv)
     yamlstream = open('config/config_client.yaml')
     testFrame = TestFrame(yaml.load(yamlstream))
+    mainWnd = FramelessWindow()
+    mainWnd.setWindowTitle('TestFrame')
+    mainWnd.setWindowIcon(QIcon('icon.png'))
+    mainWnd.setFixedSize(QSize(600,480))  #因为这里固定了大小，所以窗口的大小没有办法任意调整，想要使resizeWidget函数生效的话要把这里去掉，自己调节布局和窗口大小
+    mainWnd.setWidget(testFrame)  # 把自己的窗口添加进来
+    mainWnd.titleBar.clickedChinese.connect(testFrame.clickedChinese)
+    mainWnd.titleBar.clickedEnglish.connect(testFrame.clickedEnglish)
+    mainWnd.show()
     sys.exit(app.exec_())

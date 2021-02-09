@@ -8,7 +8,7 @@ Fedrated Learning-Smart Medical Introduction Video [<a href="https://www.bilibil
 
 Fedrated Learning-Smart Medical Demo Video [<a href="https://www.bilibili.com/video/BV">Demo</a>]
 
-README [<a href="README_EN.md">EN</a>|<a href="README.md">CN</a>]
+README [<a href="README.md">EN</a>|<a href="README_CN.md">CN</a>]
 
 Github Page: See <a href="https://beiyuouo.github.io/paddle-fl-gui/">Here</a>
 
@@ -24,26 +24,6 @@ This is a simple GUI interface developed for operation by medical staff. Server 
 
 ![](imgs/serverControlFrame.png)
 
-- Server compilation environment prompt
-
-![](imgs/compileEnv.png)
-
-- Server waiting for connection interface
-
-![](imgs/serverGetConect.png)
-
-- Server training interface
-
-![](imgs/serverTrain.png)
-
-- Server training completion interface
-
-![](imgs/serverFinish.png)
-
-- Server training completion prompt
-
-![](imgs/serverTrained.png)
-
 - Client interface
 
 ![](imgs/clientFrame.png)
@@ -51,10 +31,6 @@ This is a simple GUI interface developed for operation by medical staff. Server 
 - Test interface
 
 ![](imgs/testFrame.png)
-
-- Test result interface
-
-![](imgs/testResult.png)
 
 - Report generation page
 
@@ -80,7 +56,10 @@ python clientFrame.py 2
 ```
 
 
-## Change log
+## Changelog
 
-### v1.0(2020.11.30)
-The demo open source.
+### v1.0.1_210209_beta
+- Add qss.
+
+### v1.0.0_201130_beta
+- The demo open source.
