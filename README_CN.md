@@ -8,7 +8,7 @@ Welcome to star this repo.
 
 联邦学习-智慧医疗演示视频 [<a href="https://www.bilibili.com/video/BV">Demo</a>]
 
-README [<a href="README_EN.md">EN</a>|<a href="README.md">CN</a>]
+README [<a href="README.md">EN</a>|<a href="README_CN.md">CN</a>]
 
 Github Page: See <a href="https://beiyuouo.github.io/paddle-fl-gui/">Here</a>
 
@@ -32,15 +32,15 @@ Github Page: See <a href="https://beiyuouo.github.io/paddle-fl-gui/">Here</a>
 
 ![](imgs/testFrame.png)
 
-- 测试结果界面
+![](imgs/20210210125138.png)
 
-![](imgs/testResult.png)
+![](imgs/20210210125944.png)
 
 - 报告生成网页
 
 ![](imgs/report.png)
 
-<a href="https://beiyuouo.github.io/paddle-fl-gui/report/report">Online Demo</a>
+<a href="https://beiyuouo.github.io/paddle-fl-gui/report_cn/report">Online Demo</a>
 
 
 ## Getting start
@@ -62,6 +62,9 @@ python clientFrame.py 2
 
 
 ## Changelog
+### v1.0.2_210210_beta
+- 修复部分bug
+- 添加英文报告
 
 ### v1.0.1_210209_beta
 - 添加QSS美化界面

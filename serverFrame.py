@@ -114,6 +114,7 @@ class ServerFrame(QWidget):
         effect_shadow.setBlurRadius(10) # 阴影半径
         effect_shadow.setColor(QColor(38, 200, 78, 127)) # 阴影颜色
         self.model_path_btn.setGraphicsEffect(effect_shadow)
+        self.model_path_label.resize(200, 30)
         self.model_path_label.move(450, 70)
         self.model_path_text.resize(275, 30)
         self.model_path_text.move(450, 100)
@@ -134,6 +135,7 @@ class ServerFrame(QWidget):
         effect_shadow.setColor(QColor(38, 200, 78, 127)) # 阴影颜色
         self.job_path_btn.setGraphicsEffect(effect_shadow)
 
+        self.job_path_label.resize(200, 30)
         self.job_path_label.move(450, 170)
         self.job_path_text.resize(275, 30)
         self.job_path_text.move(450, 200)

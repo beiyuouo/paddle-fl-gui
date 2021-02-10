@@ -28,7 +28,7 @@ model_path = 'utils/models/resnet18/model_with_code'
 test_result = 0
 test_prob = 0
 test_dic = {0: '普通肺炎', 1: '正常', 2: '新冠肺炎COVID-19'}
-
+test_dic = {0: 'pneumonia', 1: 'normal', 2: 'COVID-19'}
 
 def paddle_model(data):
     import os
@@ -183,11 +183,11 @@ class TestFrame(QWidget):
         test_result = labels[0][0]
         test_prob = output[0][test_result]
 
-        jpg = QtGui.QPixmap(os.path.join(self.resultPath, '{}_with_bbox.jpg'.format(test_result))).scaled(
+        jpg = QtGui.QPixmap(os.path.join(self.resultPath, '{}_with_bbox.jpg'.format(0))).scaled(
             self.resultpicLabel.width(), self.resultpicLabel.height())
         self.resultpicLabel.setPixmap(jpg)
         # print(test_prob * 100)
-        str = language[self.lang]['result'] + ': {},\n' + language[self.lang]['probability'] + ': {:.2f}%'.format(test_dic[test_result], test_prob * 100)
+        str = language[self.lang]['result'] + ': {},\n'.format(test_dic[test_result]) + language[self.lang]['probability'] + ': {:.2f}%'.format(test_prob * 100)
         print(str)
         self.resultLabel.setText(str)
 

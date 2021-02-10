@@ -31,4 +31,5 @@ data/*
 fl_model/*
 result_*/
 !/imgs/*
-!/report/*
+!/report_cn/*
+!/report_en/*
