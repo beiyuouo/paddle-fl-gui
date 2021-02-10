@@ -1,7 +1,5 @@
 ## Hi 👋
 
-Welcome to star this repo!
-
 README [<a href="README.md">EN</a>|<a href="README_CN.md">CN</a>]
 
 Github Page: See <a href="https://beiyuouo.github.io/paddle-fl-gui/">Here</a>
@@ -26,10 +24,16 @@ This is a simple GUI interface developed for operation by medical staff. Server 
 
 ![](imgs/testFrame.png)
 
+![](imgs/20210210125138.png)
+
+![](imgs/20210210125944.png)
+
+
 - Report generation page
 
-![](imgs/report.png)
-<a href="https://beiyuouo.github.io/paddle-fl-gui/report/report">Online Demo</a>
+![](imgs/ChestCTFinding.png)
+
+<a href="https://beiyuouo.github.io/paddle-fl-gui/report_en/report">Online Demo</a>
 
 
 ## Getting start
@@ -51,6 +55,10 @@ python clientFrame.py 2
 
 
 ## Changelog
+
+### v1.0.2_210210_beta
+- Fix some bugs.
+- Add English Report.
 
 ### v1.0.1_210209_beta
 - Add qss.
